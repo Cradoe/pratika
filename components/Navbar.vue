@@ -3,7 +3,7 @@
         class="bg-[#F8FAFC] dark:bg-secondary w-screen px-2 md:px-6 lg:px-12 4xl:px-56 py-6  lg:flex lg:justify-between lg:items-center ">
         <div class="flex items-center justify-between">
             <router-link to="/">
-                <nuxt-img :src="logo" class="w-32" />
+                <nuxt-img :src="dark ? '/logo-white.png' : '/logo.png'" class="w-32" />
             </router-link>
 
             <!-- Mobile login button -->
@@ -61,12 +61,8 @@
 import { mapGetters } from 'vuex';
 export default {
     name: 'NuxtNavbar',
-
     computed: {
-        ...mapGetters(['dark']),
-        logo() {
-            return this.dark ? "/logo-white.png" : "/logo.png"
-        }
+        ...mapGetters(['dark'])
     }
 };
 </script>
