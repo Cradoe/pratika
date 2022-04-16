@@ -11,17 +11,20 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [ { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' } ],
   },
 
+
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/assets/css/tailwind.css'],
+  css: [ '@/assets/css/tailwind.css' ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+  // For image optimization
+  target: 'static',
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -32,18 +35,39 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxt/postcss8',
+    // For image optimization
+    '@nuxt/image',
+    '@nuxtjs/fontawesome',
+    '@nuxtjs/color-mode'
   ],
+  colorMode: {
+    classSuffix: '',
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    // https://image.nuxtjs.org/getting-started/installation/
+    // '@nuxt/image',
   ],
 
+  // Nuxt image optimization
+  image: {
+    // Options
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
+  },
+  // Fontawesome module configuration: https://www.npmjs.com/package/@nuxtjs/fontawesome
+  fontawesome: {
+    component: "fa",
+    icons: {
+      solid: true,
+      brands: true
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
