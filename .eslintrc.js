@@ -11,5 +11,13 @@ module.exports = {
   ],
   plugins: [],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'vue/first-attribute-linebreak': [
+      'error',
+      {
+        singleline: 'ignore',
+        multiline: 'ignore',
+      },
+    ],
+  },
 }
