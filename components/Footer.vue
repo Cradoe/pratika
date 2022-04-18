@@ -1,6 +1,6 @@
 <template>
     <div class="bg-secondary pt-16">
-        <div class="grid md:grid-cols-3 gap-y-10 px-4 lg:px-16 pb-32">
+        <div class="grid md:grid-cols-3 gap-y-10 px-4 lg:px-16  4xl:px-56  pb-32">
             <div>
                 <router-link to="/">
                     <nuxt-img src="/logo-white.png" class="w-32" />
@@ -12,9 +12,9 @@
                     <li class="hover:text-slate-500">
                         <router-link to="/about">Sponsor Project</router-link>
                     </li>
-                    <li v-for="(publicLink, index) in projectInfo.PUBLIC_LINKS" :key="index"
+                    <li v-for="( publicLink, index ) in  projectInfo.PUBLIC_LINKS " :key=" index "
                         class="hover:text-slate-500">
-                        <a :href="publicLink.url" target="_blank" rel="nofollow">{{ publicLink.name }}</a>
+                        <a :href=" publicLink.url " target="_blank" rel="nofollow">{{ publicLink.name }}</a>
                     </li>
                 </ul>
             </div>
@@ -22,7 +22,7 @@
             <div>
                 <h3 class="text-primary font-bold text-xl">Majors</h3>
                 <ul class="text-[1.008rem] text-[#E5E5E5] mt-4 list-disc">
-                    <li v-for="(major, index) of majors" :key="index" class="hover:text-slate-500">
+                    <li v-for="( major, index ) of  majors " :key=" index " class="hover:text-slate-500">
                         {{ major }}
                     </li>
                 </ul>
@@ -30,10 +30,10 @@
             <div>
                 <h3 class="text-primary font-bold text-xl">Contributors</h3>
                 <div class="flex flex-wrap gap-3 mt-4">
-                    <a v-for="(contributor, index) of contributors" :key="index" :href="contributor.html_url"
-                        :title="`${contributor.login} with ${contributor.contributions} contributions`" target="_blank"
+                    <a v-for="( contributor, index ) of  contributors " :key=" index " :href=" contributor.html_url "
+                        :title=" `${contributor.login} with ${contributor.contributions} contributions` " target="_blank"
                         rel="nofollow">
-                        <img :src="contributor.avatar_url" class="w-10 h-10 rounded-full" />
+                        <img :src=" contributor.avatar_url " class="w-10 h-10 rounded-full" />
                     </a>
                 </div>
             </div>
@@ -42,7 +42,7 @@
             <p class="text-center text-[#C4C4C4] text-sm">
                 &copy; {{ new Date().getFullYear() }} {{ projectInfo.PROJECT_NAME }} <br />
                 with
-                <fa :icon="['fas', 'heart']" class="text-red-500" /> from Ismail Obadimu and Contributors
+                <fa :icon=" [ 'fas', 'heart' ] " class="text-red-500" /> from Ismail Obadimu and Contributors
             </p>
         </div>
     </div>
@@ -54,20 +54,20 @@ import { availableMajors, projectInfo } from '@/constants/'
 
 export default {
     name: 'NuxtFooter',
-    data() {
+    data () {
         return {
             majors: availableMajors,
             contributors: [],
             projectInfo
         }
     },
-    async fetch() {
+    async fetch () {
         this.contributors = await fetch(
             'https://api.github.com/repos/cradoe/nextproject/contributors'
-        ).then(res => res.json());
+        ).then( res => res.json() );
     },
     computed: {
-        ...mapGetters(['dark'])
+        ...mapGetters( [ 'dark' ] )
     },
 
 };
