@@ -1,6 +1,8 @@
 <template>
   <div>
-    <Tutorial />
+    <Container>
+      <Tutorial />
+    </Container>
   </div>
 </template>
 
