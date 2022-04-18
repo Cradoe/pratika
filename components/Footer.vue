@@ -48,7 +48,7 @@
     </div>
 </template>
 
-<script lang="ts">
+<script>
 import { mapGetters } from 'vuex';
 import { availableMajors, projectInfo } from '@/constants/'
 

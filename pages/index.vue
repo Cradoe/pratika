@@ -1,8 +1,6 @@
 <template>
   <div>
-    <Container>
-      <Tutorial />
-    </Container>
+    <HomeHeroSection />
   </div>
 </template>
 
