@@ -20,11 +20,25 @@
                 <select
                     class="border border-primary outline-0 px-6 lg:px-10 py-3 lg:py-4 text-[#475569] bg-[#C4C4C4]/5 text-left">
                     <option>Choose your major</option>
-                    <option>Choose your major</option>
+                    <option v-for="(   major, index   ) in    majors  " :key=" index " :value=" major.slug ">
+                        {{ major.name }}
+                    </option>
                 </select>
-                <button class="bg-primary hover:bg-primary/80 outline-0 shadow-md py-3 px-8 text-white ">Get
+                <button class="bg-primary hover:bg-primary/80 outline-0 shadow-md py-3 px-8 text-white rounded">Get
                     Started</button>
             </form>
         </div>
     </section>
 </template>
+<script>
+
+import { availableMajors } from '@/constants/'
+
+export default {
+    data () {
+        return {
+            majors: availableMajors
+        }
+    }
+}
+</script>

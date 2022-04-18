@@ -12,7 +12,7 @@
                     <li class="hover:text-slate-500">
                         <router-link to="/about">Sponsor Project</router-link>
                     </li>
-                    <li v-for="( publicLink, index ) in  projectInfo.PUBLIC_LINKS " :key=" index "
+                    <li v-for="(  publicLink, index  ) in   projectInfo.PUBLIC_LINKS  " :key=" index "
                         class="hover:text-slate-500">
                         <a :href=" publicLink.url " target="_blank" rel="nofollow">{{ publicLink.name }}</a>
                     </li>
@@ -22,17 +22,17 @@
             <div>
                 <h3 class="text-primary font-bold text-xl">Majors</h3>
                 <ul class="text-[1.008rem] text-[#E5E5E5] mt-4 list-disc">
-                    <li v-for="( major, index ) of  majors " :key=" index " class="hover:text-slate-500">
-                        {{ major }}
+                    <li v-for="(  major, index  ) of   majors  " :key=" index " class="hover:text-slate-500">
+                        {{ major.name }}
                     </li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-primary font-bold text-xl">Contributors</h3>
                 <div class="flex flex-wrap gap-3 mt-4">
-                    <a v-for="( contributor, index ) of  contributors " :key=" index " :href=" contributor.html_url "
-                        :title=" `${contributor.login} with ${contributor.contributions} contributions` " target="_blank"
-                        rel="nofollow">
+                    <a v-for="(  contributor, index  ) of   contributors  " :key=" index " :href=" contributor.html_url "
+                        :title=" `${contributor.login} with ${contributor.contributions} contributions` "
+                        target="_blank" rel="nofollow">
                         <img :src=" contributor.avatar_url " class="w-10 h-10 rounded-full" />
                     </a>
                 </div>
