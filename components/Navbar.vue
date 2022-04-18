@@ -1,13 +1,14 @@
 <template>
     <nav
-        class="bg-[#F8FAFC] dark:bg-secondary  px-2 md:px-6 lg:px-16 4xl:px-56 py-6  lg:flex lg:justify-between lg:items-center ">
+        class="bg-[#F8FAFC] dark:bg-secondary/95  px-2 md:px-6 lg:px-16 4xl:px-56 py-6  lg:flex lg:justify-between lg:items-center ">
         <div class="flex items-center justify-between">
             <router-link to="/">
                 <nuxt-img :src="dark ? '/logo-white.png' : '/logo.png'" class="w-32" />
             </router-link>
 
             <!-- Mobile login button -->
-            <div class="lg:hidden">
+            <div class="lg:hidden flex items-center gap-4">
+                <AppDarkModeToggle />
                 <router-link to="/login"
                     class=" bg-gradient-to-r from-primary hover:from-primary/75 to-primary/80 hover:to-primary text-white px-4 py-2 text-xs rounded">
                     Login

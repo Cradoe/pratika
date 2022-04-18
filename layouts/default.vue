@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white dark:bg-black" :class=" dark ? 'dark' : 'light' ">
-    <Navbar />
+    <LazyNavbar />
     <Nuxt />
     <Footer />
   </div>
