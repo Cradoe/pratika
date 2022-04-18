@@ -1,6 +1,6 @@
 <template>
     <nav
-        class="bg-[#F8FAFC] dark:bg-secondary w-screen px-2 md:px-6 lg:px-12 4xl:px-56 py-6  lg:flex lg:justify-between lg:items-center ">
+        class="bg-[#F8FAFC] dark:bg-secondary w-screen px-2 md:px-6 lg:px-16 4xl:px-56 py-6  lg:flex lg:justify-between lg:items-center ">
         <div class="flex items-center justify-between">
             <router-link to="/">
                 <nuxt-img :src="dark ? '/logo-white.png' : '/logo.png'" class="w-32" />

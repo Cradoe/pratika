@@ -2,6 +2,7 @@
   <div class="bg-white dark:bg-black" :class=" dark ? 'dark' : 'light' ">
     <Navbar />
     <Nuxt />
+    <Footer />
   </div>
 </template>
 <script>

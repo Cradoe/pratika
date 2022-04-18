@@ -38,7 +38,7 @@ export default {
     // For image optimization
     '@nuxt/image',
     '@nuxtjs/fontawesome',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/dotenv'
   ],
   colorMode: {
     classSuffix: '',
