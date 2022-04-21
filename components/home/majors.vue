@@ -25,20 +25,26 @@
                     </select>
                 </div> -->
                 <div class="hidden sm:block">
-                    <ul class="flex">
-                        <li v-for="(                                              major, index                                              ) in                                               majors                                              "
-                            :key=" index " class="tab-item">
+                    <ul class="flex justify-center">
+                        <li v-for="(                                       major, index                                       ) in                                        majors                                                                                                                         "
+                            :key=" index " ref="tabs" :data-id=" index " class="tab-item">
                             <div class="flex justify-center items-center rounded-3xl item-tab-heading hover:shadow-2xl border border-[#E5E5E5] px-4 py-2 text-sm mb-3 cursor-pointer mr-5"
                                 @click=" activeTab( $event ) ">
-                                <span class="ml-1 font-normal">{{ major.name }}</span>
-                            </div>
-                            <div class="w-full h-1 text-gray-600 rounded-t-md hidden mt-10">
-                                {{ major.slug }}
+                                <span class="ml-1 font-normal text-gray-600">{{ major.name }}</span>
                             </div>
                         </li>
-
-
                     </ul>
+                    <div>
+                        <div v-for="(                                      major, index                                                                                                                        ) in                                                                                                                         majors                                                                                                                        "
+                            :key=" index " ref="tabContent" :data-id=" index "
+                            class="w-full h-1 text-gray-600 rounded-t-md hidden mt-10">
+                            <div v-if=" major.toolsImage ">
+                                <nuxt-img v-for="(       image, imageIndex       ) in        major.toolsImage       "
+                                    :key=" imageIndex " :src=" image " class="w-32" />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -57,22 +63,31 @@ export default {
     },
     mounted () {
         const firstTabItem = document.querySelectorAll( ".tab-item" )[ 0 ];
-        this.setTabAsActive( firstTabItem )
+        this.setTabAsActive( firstTabItem );
     },
     methods: {
         activeTab ( event ) {
-            const siblings = event.currentTarget.parentNode.querySelectorAll( ".tab-item" );
+            const siblings = event.currentTarget.parentNode.parentNode.querySelectorAll( ".tab-item" );
+
             for ( const item of siblings ) {
-                item.children[ 1 ].classList.add( "hidden" );
-                item.classList.add( "text-gray-600" );
-                item.classList.remove( "text-indigo-700" );
+                item.children[ 0 ].classList.remove( "bg-primary/10" );
             }
-            this.setTabAsActive( event.currentTarget )
+
+            // hide all other contents
+            for ( const contentIndex of this.$refs.tabContent ) {
+                contentIndex.classList.add( "hidden" );
+            }
+
+
+            this.setTabAsActive( event.currentTarget.parentNode )
         },
         setTabAsActive ( tab ) {
-            tab.children[ 1 ].classList.remove( "hidden" );
-            tab.classList.remove( "text-gray-600" );
-            tab.classList.add( "text-indigo-700" );
+            // show tab content
+            const contentIndex = tab.getAttribute( 'data-id' )
+            this.$refs.tabContent[ contentIndex ].classList.remove( "hidden" );
+
+            //  style tab heading 
+            tab.children[ 0 ].classList.add( "bg-primary/10" );
         }
     },
 }
@@ -80,6 +95,6 @@ export default {
 
 <style>
 .item-tab-heading {
-    box-shadow: 0 4px 10px rgb(0 0 0 / 25%);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 6%);
 }
 </style>

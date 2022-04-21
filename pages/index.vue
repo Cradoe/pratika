@@ -3,6 +3,7 @@
     <HomeHeroSection />
     <HomeUserTweets />
     <HomeMajors />
+    <HomeEnrollSection />
   </div>
 </template>
 
