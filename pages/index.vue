@@ -2,6 +2,7 @@
   <div>
     <HomeHeroSection />
     <HomeUserTweets />
+    <HomeMajors />
   </div>
 </template>
 
