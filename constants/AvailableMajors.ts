@@ -7,8 +7,7 @@ type Major = {
 export const availableMajors: Major[] = [
     {
         name: "Front-End Developement",
-        slug: "front-end",
-        toolsImage: ['logo.png']
+        slug: "front-end"
     },
     {
         name: "Backend Developement",
@@ -16,7 +15,6 @@ export const availableMajors: Major[] = [
     },
     {
         name: "UI/UX",
-        slug: "ui-ux",
-        toolsImage: ['logo.png']
+        slug: "ui-ux"
     }
 ]
