@@ -28,10 +28,10 @@
 
             <div class="lg:w-7/12 items-start grid md:grid-cols-2 md:gap-4 xl:gap-10">
                 <!--  divided four tweets into two subsections for proper UI alignment  -->
-                <div v-for="(                                                                                subTweetsId, index                                                                                ) in                                                                                testimonialTweetsId                                                                                "
+                <div v-for="(                                                                                 subTweetsId, index                                                                                 ) in                                                                                 testimonialTweetsId                                                                                 "
                     :key=" index " class="grid  gap-4">
                     <Tweet
-                        v-for="(                                                                              tweetId, j                                                                              ) in                                                                              subTweetsId                                                                             "
+                        v-for="(                                                                               tweetId, j                                                                               ) in                                                                               subTweetsId                                                                              "
                         :id=" tweetId " :key=" j " error-message="This tweet could not be loaded">
                         <div class="h-64 border border-[#eee]"></div>
                     </Tweet>

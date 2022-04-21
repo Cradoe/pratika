@@ -4,6 +4,7 @@
     <HomeUserTweets />
     <HomeMajors />
     <HomeEnrollSection />
+    <HomeTrackAchievements />
   </div>
 </template>
 

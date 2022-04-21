@@ -1,5 +1,5 @@
 <template>
-    <section class="dark:bg-secondary/95 py-32">
+    <section class="dark:bg-secondary/95 py-16">
         <HomeNumberedSectionHeading number=" 2 " heading="Enroll for a project"
             description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since" />
         <div class="text-center mt-6">
