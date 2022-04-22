@@ -1,23 +1,22 @@
 <template>
-  <div class="bg-white dark:bg-black" :class=" dark ? 'dark' : 'light' ">
-    <LazyNavbar />
+  <LayoutWrapper>
+    <LazyNavbar>
+      <template #nav-items>
+        <NavbarDefaultItems />
+      </template>
+      <template #cta-button>
+        <NavbarCtaButton to="/login" text="Login" />
+      </template>
+
+    </LazyNavbar>
     <Nuxt />
     <Footer />
-  </div>
+  </LayoutWrapper>
 </template>
 <script>
-import { mapGetters } from 'vuex';
 
 export default {
-  name: "NuxtDefault",
-  computed: {
-    ...mapGetters( [ 'dark' ] ),
-  },
+  name: "NuxtDefault"
 };
 </script>
 
-<style>
-html {
-  font-family: Roboto, sans-serif;
-}
-</style>

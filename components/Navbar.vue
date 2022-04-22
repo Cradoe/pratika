@@ -9,10 +9,7 @@
             <!-- Mobile login button -->
             <div class="lg:hidden flex items-center gap-4">
                 <AppDarkModeToggle />
-                <router-link to="/login"
-                    class=" bg-gradient-to-r from-primary hover:from-primary/75 to-primary/80 hover:to-primary text-white px-4 py-2 text-xs rounded">
-                    Login
-                </router-link>
+                <slot name="cta-button"></slot>
             </div>
         </div>
 
@@ -20,17 +17,7 @@
         <div class="relative hidden lg:flex items-center ml-auto">
             <nav class="text-sm leading-6 font-semibold text-secondary dark:text-slate-200">
                 <ul class="flex space-x-8">
-                    <li>
-                        <router-link class="hover:text-seconday/75 dark:hover:text-primary/75" to="/#majors">
-                            Available
-                            Majors
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/faq" class="hover:text-seconday/75 dark:hover:text-primary/75">
-                            FAQ
-                        </router-link>
-                    </li>
+                    <slot name="nav-items"></slot>
                 </ul>
             </nav>
 
