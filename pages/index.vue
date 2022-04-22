@@ -12,6 +12,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: "IndexPage"
+  name: "IndexPage",
+  layout: "IndexLayout"
 })
 </script>

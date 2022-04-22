@@ -1,6 +1,6 @@
 <template>
-    <nav
-        class="bg-[#F8FAFC] dark:bg-secondary/95  px-2 md:px-6 lg:px-16 4xl:px-56 py-6  lg:flex lg:justify-between lg:items-center ">
+    <nav :class="bgColor"
+        class="dark:bg-secondary/95  px-2 md:px-6 lg:px-16 4xl:px-56 py-6  lg:flex lg:justify-between lg:items-center ">
         <div class="flex items-center justify-between">
             <router-link to="/">
                 <nuxt-img :src="dark ? '/logo-white.png' : '/logo.png'" class="w-32" />
@@ -49,10 +49,7 @@
                     </svg>
                 </a>
 
-                <router-link to="/login"
-                    class="ml-6  bg-gradient-to-r from-primary hover:from-primary/75 to-primary/80 hover:to-primary text-white px-6 py-2 rounded-md">
-                    Login
-                </router-link>
+                <slot name="cta-button"></slot>
             </div>
         </div>
     </nav>
@@ -62,6 +59,13 @@
 import { mapGetters } from 'vuex';
 export default {
     name: 'NuxtNavbar',
+    props: {
+        'bgColor': {
+            type: String,
+            default: "bg-white"
+        }
+
+    },
     computed: {
         ...mapGetters(['dark'])
     }
