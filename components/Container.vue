@@ -1,6 +1,9 @@
 <template>
+
     <div class="px-4 lg:px-16">
-        <slot></slot>
+        <div class="container" :class="className">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -8,6 +11,12 @@
 
 export default {
     name: 'NuxtContainer',
+    props: {
+        className: {
+            type: String,
+            default: ""
+        }
+    }
 
 };
 </script>

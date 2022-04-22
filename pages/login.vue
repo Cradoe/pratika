@@ -1,6 +1,9 @@
 <template>
     <div>
-        www
+        <PageHeroSection hero-image="/login-image.png">
+            Login to Your <br class="hidden lg:block" />
+            <HighlightedHeroWord>Account</HighlightedHeroWord>
+        </PageHeroSection>
     </div>
 </template>
 
