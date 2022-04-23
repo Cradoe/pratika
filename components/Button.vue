@@ -14,7 +14,7 @@ export default {
             default: 'submit'
         },
         disabled: {
-            type: boolean,
+            type: Boolean,
             default: false
         },
         mode: {
