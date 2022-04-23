@@ -2,10 +2,10 @@
   <LayoutWrapper>
     <LazyNavbar>
       <template #nav-items>
-        <NavbarDefaultItems />
+        <NavbarItemsDefaultItems />
       </template>
       <template #cta-button>
-        <NavbarCtaButton to="/login" text="Login" />
+        <NavbarItemsCtaButton to="/login" text="Login" />
       </template>
 
     </LazyNavbar>

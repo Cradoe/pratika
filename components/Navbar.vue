@@ -1,9 +1,9 @@
 <template>
-    <nav :class="bgColor"
-        class="dark:bg-secondary/95  px-2 md:px-6 lg:px-16 4xl:px-56 py-6  lg:flex lg:justify-between lg:items-center ">
+    <nav :class=" bgColor "
+        class="dark:bg-dark-900 px-2 md:px-6 lg:px-16 4xl:px-56 py-6  lg:flex lg:justify-between lg:items-center ">
         <div class="flex items-center justify-between">
             <router-link to="/">
-                <nuxt-img :src="dark ? '/logo-white.png' : '/logo.png'" class="w-32" />
+                <nuxt-img :src=" theme.dark ? '/logo-white.png' : '/logo.png' " class="w-32" />
             </router-link>
 
             <!-- Mobile login button -->
@@ -42,8 +42,7 @@
     </nav>
 </template>
 
-<script lang="ts">
-import { mapGetters } from 'vuex';
+<script>
 export default {
     name: 'NuxtNavbar',
     props: {
@@ -51,10 +50,11 @@ export default {
             type: String,
             default: "bg-white"
         }
-
     },
     computed: {
-        ...mapGetters(['dark'])
+        theme () {
+            return this.$store.state.theme
+        }
     }
 };
 </script>

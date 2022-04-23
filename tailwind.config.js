@@ -24,6 +24,10 @@ module.exports = {
       colors: {
         primary: withOpacityValue( '--color-primary' ),
         secondary: withOpacityValue( '--color-secondary' ),
+        dark: {
+          700: '#1E293B',
+          900: '#111827',
+        }
       },
       screens: {
         "4xl": "2560px",

@@ -2,10 +2,10 @@
     <LayoutWrapper>
         <LazyNavbar>
             <template #nav-items>
-                <NavbarDefaultItems />
+                <NavbarItemsDefaultItems />
             </template>
             <template #cta-button>
-                <NavbarCtaButton to="/register" text="Register" />
+                <NavbarItemsCtaButton to="/register" text="Register" />
             </template>
 
         </LazyNavbar>

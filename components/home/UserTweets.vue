@@ -1,7 +1,7 @@
 <template>
-    <section class="px-4 lg:px-0 lg:pl-16 pb-16 dark:bg-secondary/95 ">
+    <section class="px-4 lg:px-0 lg:pl-16 pb-16 dark:bg-dark-900 ">
         <div
-            class="bg-secondary dark:bg-[#1E293B] dark:shadow-2xl p-10 lg:pl-16  xl:rounded-bl-3xl flex flex-col lg:flex-row gap-x-28 gap-y-10">
+            class="bg-secondary dark:bg-dark-700 dark:shadow-2xl p-10 lg:pl-16  xl:rounded-bl-3xl flex flex-col lg:flex-row gap-x-28 gap-y-10">
 
             <div class="flex justify-center items-start flex-col gap-y-4 gap-x-10 lg:w-5/12 lg:order-2">
                 <p class="text-[#F8FAFC] lg:text-2xl">
@@ -28,10 +28,10 @@
 
             <div class="lg:w-7/12 items-start grid md:grid-cols-2 md:gap-4 xl:gap-10">
                 <!--  divided four tweets into two subsections for proper UI alignment  -->
-                <div v-for="(                                                                                 subTweetsId, index                                                                                 ) in                                                                                 testimonialTweetsId                                                                                 "
+                <div v-for="(                                                                                       subTweetsId, index                                                                                       ) in                                                                                       testimonialTweetsId                                                                                       "
                     :key=" index " class="grid  gap-4">
                     <Tweet
-                        v-for="(                                                                               tweetId, j                                                                               ) in                                                                               subTweetsId                                                                              "
+                        v-for="(                                                                                     tweetId, j                                                                                     ) in                                                                                     subTweetsId                                                                                    "
                         :id=" tweetId " :key=" j " error-message="This tweet could not be loaded">
                         <div class="h-64 border border-[#eee]"></div>
                     </Tweet>

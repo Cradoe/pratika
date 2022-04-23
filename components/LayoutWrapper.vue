@@ -1,15 +1,17 @@
 <template>
-    <div class="bg-white dark:bg-black" :class=" dark ? 'dark' : 'light' ">
+    <div class="bg-white dark:bg-dark-900" :class=" theme.dark ? 'dark' : 'light' ">
+        <GlobalAlert />
         <slot />
     </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 
 export default {
     computed: {
-        ...mapGetters( [ 'dark' ] ),
+        theme () {
+            return this.$store.state.theme
+        }
     },
 };
 </script>

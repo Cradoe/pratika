@@ -2,10 +2,10 @@
     <LayoutWrapper>
         <LazyNavbar bg-color="bg-[#F8FAFC]">
             <template #nav-items>
-                <NavbarDefaultItems />
+                <NavbarItemsDefaultItems />
             </template>
             <template #cta-button>
-                <NavbarCtaButton to="/login" text="Login" />
+                <NavbarItemsCtaButton to="/login" text="Login" />
             </template>
 
         </LazyNavbar>

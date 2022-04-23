@@ -1,8 +1,8 @@
 <template>
-    <div :class="sectionHeight" class="bg-[#F8FAFC] mb-32">
+    <div :class="sectionHeight" class="bg-[#F8FAFC] dark:bg-dark-900 mb-32">
         <Container
             :class-name="sectionHeight + ' flex flex-col gap-y-12 md:flex-row justify-center md:justify-between items-center'">
-            <div class="text-2xl md:leading-tight md:text-[2.41rem] lg:text-[3.41rem] font-black">
+            <div class="text-2xl md:leading-tight md:text-[2.41rem] lg:text-[3.41rem] dark:text-white font-black">
                 <slot />
             </div>
             <div class="relative h-auto lg:h-[50vh] w-[24rem] 4xl:w-auto flex justify-center">
@@ -14,18 +14,18 @@
 </template>
 
 <script lang="ts" setup>
-    export default {
-        props: {
-            heroImage: {
-                type: String,
-                default: ''
-            }
-        },
-        data () {
-            return {
-                sectionHeight: "h-[50vh]"
-            }
+export default {
+    props: {
+        heroImage: {
+            type: String,
+            default: ''
         }
-
+    },
+    data() {
+        return {
+            sectionHeight: "h-[50vh]"
+        }
     }
+
+}
 </script>
