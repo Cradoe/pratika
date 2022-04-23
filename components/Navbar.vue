@@ -2,9 +2,9 @@
     <nav :class=" bgColor "
         class="dark:bg-dark-900 px-2 md:px-6 lg:px-16 4xl:px-56 py-6  lg:flex lg:justify-between lg:items-center ">
         <div class="flex items-center justify-between">
-            <router-link to="/">
+            <NuxtLink to="/">
                 <nuxt-img :src=" theme.dark ? '/logo-white.png' : '/logo.png' " class="w-32" />
-            </router-link>
+            </NuxtLink>
 
             <!-- Mobile login button -->
             <div class="lg:hidden flex items-center gap-4">

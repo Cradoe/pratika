@@ -10,7 +10,7 @@ export const state = () => ({
     message: null
 });
 
-const actions = {
+export const actions = {
     success({ commit }: ActionContext<State, RootState>, message: string) {
         commit('success', message);
     },
@@ -22,7 +22,7 @@ const actions = {
     }
 };
 
-const mutations = {
+export const mutations = {
     success(state: State, message: string) {
         state.type = 'bg-teal-100 border border-teal-400 text-teal-900';
         state.message = message;
@@ -35,11 +35,4 @@ const mutations = {
         state.type = null;
         state.message = null;
     }
-};
-
-export const alert = {
-    namespaced: true,
-    state,
-    actions,
-    mutations
 };

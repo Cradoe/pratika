@@ -1,24 +1,12 @@
 import { ActionContext } from 'vuex';
+import { AccountState } from './type';
 import { userService } from '~/services';
 import { User, RootState } from '~/utils';
 
-interface StateStatus {
-    loggedIn?: boolean
-}
-interface State {
-    user: User | null
-    status: StateStatus | {}
-}
 
-const userData = null;
-const user: User = userData ? JSON.parse(userData) : null;
-
-const state: State = user
-    ? { status: { loggedIn: true }, user }
-    : { status: {}, user: null };
-
-const actions = {
-    login({ dispatch, commit }: ActionContext<State, RootState>, { username, password }: User) {
+export default {
+    login({ dispatch, commit }: ActionContext<AccountState, RootState>, { username, password }: User) {
+        commit('loginRequest', { username });
 
         userService.login({ username, password })
             .then(
@@ -32,7 +20,7 @@ const actions = {
                 }
             );
     },
-    logout({ commit }: ActionContext<State, RootState>) {
+    logout({ commit }: ActionContext<AccountState, RootState>) {
         userService.logout();
         commit('logout');
     },
@@ -55,32 +43,4 @@ const actions = {
     //             }
     //         );
     // }
-};
-
-const mutations = {
-    loginSuccess(state: State, user: User) {
-        state.status = { loggedIn: true };
-        state.user = user;
-    },
-    loginFailure(state: State) {
-        state.status = {};
-        state.user = null;
-    },
-    logout(state: State) {
-        state.status = {};
-        state.user = null;
-    },
-    registerSuccess(state: State) {
-        state.status = {};
-    },
-    registerFailure(state: State) {
-        state.status = {};
-    }
-};
-
-export const account = {
-    namespaced: true,
-    state,
-    actions,
-    mutations
 };

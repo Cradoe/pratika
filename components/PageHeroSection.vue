@@ -1,13 +1,13 @@
 <template>
-    <div :class="sectionHeight" class="bg-[#F8FAFC] dark:bg-dark-900 mb-32">
+    <div :class="sectionHeight" class="bg-[#F8FAFC] dark:bg-dark-900 mb-20">
         <Container
             :class-name="sectionHeight + ' flex flex-col gap-y-12 md:flex-row justify-center md:justify-between items-center'">
-            <div class="text-2xl md:leading-tight md:text-[2.41rem] lg:text-[3.41rem] dark:text-white font-black">
+            <div class="text-2xl md:leading-tight md:text-[2.41rem] lg:text-[3.01rem] dark:text-white font-black">
                 <slot />
             </div>
-            <div class="relative h-auto lg:h-[50vh] w-[24rem] 4xl:w-auto flex justify-center">
+            <div class="relative h-auto lg:h-[45vh] w-[24rem] 4xl:w-auto flex justify-center">
                 <nuxt-img :src="heroImage"
-                    class="w-[10rem] md:w-[12rem] lg:w-[24rem] 4xl:w-[40rem]  lg:absolute 4xl:relative lg:-bottom-16" />
+                    class="w-[10rem] md:w-[12rem] lg:w-[18rem] 4xl:w-[40rem]  lg:absolute 4xl:relative lg:-bottom-16" />
             </div>
         </Container>
     </div>
@@ -23,7 +23,7 @@ export default {
     },
     data() {
         return {
-            sectionHeight: "h-[50vh]"
+            sectionHeight: "h-[45vh]"
         }
     }
 

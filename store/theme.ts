@@ -7,9 +7,6 @@ export const state = () => ({
 });
 
 export const mutations = {
-    SET_DARK: (state: State, bool: boolean) => {
-        state.dark = bool;
-    },
     toggle(state: State, bool: boolean) {
         state.dark = bool;
     }

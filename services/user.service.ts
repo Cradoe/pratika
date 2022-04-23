@@ -6,7 +6,6 @@ import { User } from "~/utils";
 export const userService = {
 
     login: async (loginData: User) => {
-
         const response = handleAuthorizedResponse(await httpClient.post({ url: "/users/login", payload: loginData }));
         const { token, ...user } = response.data;
 
