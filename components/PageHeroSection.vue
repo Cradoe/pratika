@@ -1,13 +1,13 @@
 <template>
     <div :class="sectionHeight" class="bg-[#F8FAFC] mb-32">
         <Container
-            :class-name="sectionHeight + ' flex flex-col lg:flex-row justify-center lg:justify-between lg:items-center'">
-            <div class="text-2xl lg:text-[3.41rem] font-black">
+            :class-name="sectionHeight + ' flex flex-col gap-y-12 md:flex-row justify-center md:justify-between items-center'">
+            <div class="text-2xl md:leading-tight md:text-[2.41rem] lg:text-[3.41rem] font-black">
                 <slot />
             </div>
-            <div :class="sectionHeight" class="relative lg:w-[24rem] ">
+            <div class="relative h-auto lg:h-[50vh] w-[24rem] 4xl:w-auto flex justify-center">
                 <nuxt-img :src="heroImage"
-                    class="w-[10rem] lg:w-[24rem] left-[20%] absolute -bottom-16 lg:-bottom-16" />
+                    class="w-[10rem] md:w-[12rem] lg:w-[24rem] 4xl:w-[40rem]  lg:absolute 4xl:relative lg:-bottom-16" />
             </div>
         </Container>
     </div>
