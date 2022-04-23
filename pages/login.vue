@@ -54,6 +54,12 @@
                                 Sign in
                             </Button>
                         </div>
+                        <div class="text-sm mt-5">
+                            <NuxtLink to="/register" class="font-medium text-secondary hover:text-secondary/70 "> New
+                                user? Register
+                                now for a life-time free access
+                            </NuxtLink>
+                        </div>
                     </form>
                 </div>
             </div>
