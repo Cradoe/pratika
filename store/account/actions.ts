@@ -1,11 +1,11 @@
 import { ActionContext } from 'vuex';
-import { AccountState } from './type';
+import { IAccountState } from './type';
 import { userService } from '~/services';
-import { User, RootState } from '~/utils';
+import { IUser, IRootState } from '~/utils';
 
 
 export default {
-    login({ dispatch, commit }: ActionContext<AccountState, RootState>, { username, password }: User) {
+    login({ dispatch, commit }: ActionContext<IAccountState, IRootState>, { username, password }: IUser) {
         commit('loginRequest', { username });
 
         userService.login({ username, password })
@@ -20,11 +20,11 @@ export default {
                 }
             );
     },
-    logout({ commit }: ActionContext<AccountState, RootState>) {
+    logout({ commit }: ActionContext<IAccountState, IRootState>) {
         userService.logout();
         commit('logout');
     },
-    // register({ dispatch, commit }:ActionContext<State, RootState>, user:User) {
+    // register({ dispatch, commit }:ActionContext<State, IRootState>, user:User) {
     //     commit('registerRequest', user);
 
     //     userService.register(user)

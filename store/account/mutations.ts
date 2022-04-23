@@ -1,31 +1,31 @@
 
 
-import { AccountState } from './type';
-import { User } from '~/utils';
+import { IAccountState } from './type';
+import { IUser } from '~/utils';
 
 
 
 export default {
-    loginRequest(state: AccountState, user: User) {
+    loginRequest(state: IAccountState, user: IUser) {
         state.status = { loggingIn: true };
         state.user = user;
     },
-    loginSuccess(state: AccountState, user: User) {
+    loginSuccess(state: IAccountState, user: IUser) {
         state.status = { loggedIn: true };
         state.user = user;
     },
-    loginFailure(state: AccountState) {
+    loginFailure(state: IAccountState) {
         state.status = {};
         state.user = null;
     },
-    logout(state: AccountState) {
+    logout(state: IAccountState) {
         state.status = {};
         state.user = null;
     },
-    registerSuccess(state: AccountState) {
+    registerSuccess(state: IAccountState) {
         state.status = {};
     },
-    registerFailure(state: AccountState) {
+    registerFailure(state: IAccountState) {
         state.status = {};
     }
 };

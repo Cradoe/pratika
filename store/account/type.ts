@@ -1,11 +1,11 @@
-import { User } from "~/utils";
+import { IUser } from "~/utils";
 
-export interface StateStatus {
+export interface IStateStatus {
     loggingIn?: boolean;
     loggedIn?: boolean;
     registering?: boolean;
 }
-export interface AccountState {
-    user: User | null
-    status: StateStatus | {}
+export interface IAccountState {
+    user: IUser | null
+    status: IStateStatus | {}
 }
