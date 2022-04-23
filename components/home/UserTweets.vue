@@ -7,7 +7,7 @@
                 <p class="text-[#F8FAFC] lg:text-2xl">
                     Professionals across the globe won't be talking about us if we aren't the the best lorem ipsum
                 </p>
-                <router-link to="/about" class="text-sm lg:text-base text-primary hover:text-primary/80">
+                <NuxtLink to="/about" class="text-sm lg:text-base text-primary hover:text-primary/80">
                     <svg width="128" height="23" class="inline mr-3 w-12 lg:w-auto" viewBox="0 0 128 23" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -23,15 +23,15 @@
                     </svg>
 
                     Learn More
-                </router-link>
+                </NuxtLink>
             </div>
 
             <div class="lg:w-7/12 items-start grid md:grid-cols-2 md:gap-4 xl:gap-10">
                 <!--  divided four tweets into two subsections for proper UI alignment  -->
-                <div v-for="(                                                                                       subTweetsId, index                                                                                       ) in                                                                                       testimonialTweetsId                                                                                       "
+                <div v-for="(                                                                                        subTweetsId, index                                                                                        ) in                                                                                        testimonialTweetsId                                                                                        "
                     :key=" index " class="grid  gap-4">
                     <Tweet
-                        v-for="(                                                                                     tweetId, j                                                                                     ) in                                                                                     subTweetsId                                                                                    "
+                        v-for="(                                                                                      tweetId, j                                                                                      ) in                                                                                      subTweetsId                                                                                     "
                         :id=" tweetId " :key=" j " error-message="This tweet could not be loaded">
                         <div class="h-64 border border-[#eee]"></div>
                     </Tweet>

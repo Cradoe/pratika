@@ -1,15 +1,15 @@
 <template>
     <Fragment>
         <li>
-            <router-link class="hover:text-seconday/75 dark:hover:text-primary/75" to="/#majors">
+            <NuxtLink class="hover:text-seconday/75 dark:hover:text-primary/75" to="/#majors">
                 Available
                 Majors
-            </router-link>
+            </NuxtLink>
         </li>
         <li>
-            <router-link to="/faq" class="hover:text-seconday/75 dark:hover:text-primary/75">
+            <NuxtLink to="/faq" class="hover:text-seconday/75 dark:hover:text-primary/75">
                 FAQ
-            </router-link>
+            </NuxtLink>
         </li>
     </Fragment>
 </template>
