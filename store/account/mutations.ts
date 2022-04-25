@@ -22,6 +22,9 @@ export default {
         state.status = {};
         state.user = null;
     },
+    registerRequest(state: IAccountState, _user: IUser) {
+        state.status = { registering: true };
+    },
     registerSuccess(state: IAccountState) {
         state.status = {};
     },

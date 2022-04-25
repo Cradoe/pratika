@@ -26,16 +26,20 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/fontawesome": "^1.1.2",
+    "@vue/composition-api": "^1.4.9",
     "core-js": "^3.19.3",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",
     "vue-fragment": "^1.5.2",
+    "vue-password": "^3.1.0",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
     "vue-tweet": "^1.2.1",
     "vue-tweet-embed": "^2.4.0",
     "vuejs-twitter-feed": "^1.0.1",
-    "webpack": "^4.46.0"
+    "vuelidate": "^0.7.7",
+    "webpack": "^4.46.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",

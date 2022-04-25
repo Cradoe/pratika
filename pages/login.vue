@@ -11,22 +11,29 @@
                     class="md:max-w-md lg:max-w-xl w-full px-4 py-12 mx-4 sm:mx-16 md:mx-20  sm:px-6 lg:p-24 border border-[#E5E5E5] mb-24">
 
                     <form action="#" method="POST" @submit.prevent=" handleSubmit ">
-                        <div class="pb-5">
+                        <div class="py-3">
                             <label for="email-address" class="text-[#AEB1B5]">Email address</label>
-                            <input id="email-address" v-model=" email " name="email" type="email" autocomplete="email"
-                                class="appearance-none rounded relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary/80 focus:border-primary/80 focus:z-10 sm:text-sm"
-                                placeholder="Email address" required />
-                            <div v-show=" submitted && !email " class="text-red-400 text-xs">Email address is required
+                            <input id="email-address" v-model=" $v.form.email.$model " name="email" type="email"
+                                autocomplete="email" :class=" formControl " placeholder="Email address" />
+
+                            <div v-if=" submitted && !$v.form.email.required " class="text-red-400 text-xs">Email is
+                                required
                             </div>
+                            <div v-if=" submitted && !$v.form " class="text-red-400 text-xs">Please enter a valid email
+                                address
+                                {{ $v.form.email.$params.minLength.min }} letters.
+                            </div>
+
                         </div>
-                        <div class="py-4">
+                        <div class="py-3">
                             <label for="password" class="text-[#AEB1B5]">Password</label>
-                            <input id="password" v-model=" password " name="password" type="password"
-                                autocomplete="current-password" required=""
-                                class="appearance-none rounded relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-primary/80 focus:border-primary/80 focus:z-10 sm:text-sm"
+                            <PasswordReveal id="password" v-model=" $v.form.password.$model " type="password"
+                                name="password" autocomplete="current-password" :classes=" formControl "
                                 placeholder="Password" />
 
-                            <div v-show=" submitted && !password " class="text-red-400 text-xs">Password is required
+                            <div v-if=" submitted && !$v.form.password.required " class="text-red-400 text-xs">Password
+                                is
+                                required
                             </div>
                         </div>
 
@@ -68,37 +75,55 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import Vue from 'vue';
-import { mapActions } from 'vuex'
+import { required, email } from 'vuelidate/lib/validators'
+
+import { mapActions } from 'vuex';
 
 export default Vue.extend( {
     name: "LoginPage",
     layout: 'loginPage',
     data () {
         return {
-            email: '',
-            password: '',
+            form: {
+                email: '',
+                password: ''
+            },
             submitted: false
         }
     },
     computed: {
         status () {
             return this.$store.state.account.status
+        },
+        formControl () {
+            return "appearance-none rounded relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary/80 focus:border-primary/80 focus:z-10 sm:text-sm"
         }
-    },
-    created () {
-        // reset login status
-
     },
     methods: {
         ...mapActions( 'account', [ 'login' ] ),
         handleSubmit () {
             this.submitted = true;
-            const { email, password } = this;
-            if ( email && password ) {
-                this.login( { email, password } )
+            if ( this.$v.form.$invalid ) {
+                this.$v.form.$touch();
+            } else {
+                this.login( this.form )
             }
+
+        }
+    },
+    validations () {
+        return {
+            form: {
+                email: {
+                    required,
+                    email
+                },
+                password: {
+                    required
+                }
+            },
         }
     }
 } )

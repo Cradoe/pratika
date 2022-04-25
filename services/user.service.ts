@@ -1,11 +1,11 @@
 import { httpClient } from "~/services";
-import { User } from "~/utils";
+import { IUser } from "~/utils";
 
 
 
 export const userService = {
 
-    login: async (loginData: User) => {
+    login: async (loginData: IUser) => {
         const response = handleAuthorizedResponse(await httpClient.post({ url: "/users/login", payload: loginData }));
         const { token, ...user } = response.data;
 
@@ -14,6 +14,13 @@ export const userService = {
             localStorage.setItem('user', JSON.stringify(user));
         }
         return user;
+    },
+    register: async (userData: IUser) => {
+        const response = handleAuthorizedResponse(await httpClient.post({ url: "/users/register", payload: userData }));
+        const { user } = response.data;
+
+        return user;
+
     },
     logout: () => {
         // remove user from local storage to log user out

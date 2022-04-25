@@ -24,23 +24,25 @@ export default {
         userService.logout();
         commit('logout');
     },
-    // register({ dispatch, commit }:ActionContext<State, IRootState>, user:User) {
-    //     commit('registerRequest', user);
+    register({ dispatch, commit }: ActionContext<IAccountState, IRootState>, user: IUser) {
+        commit('registerRequest', user);
 
-    //     userService.register(user)
-    //         .then(
-    //             user => {
-    //                 commit('registerSuccess', user);
-    //                 router.push('/login');
-    //                 setTimeout(() => {
-    //                     // display success message after route change completes
-    //                     dispatch('alert/success', 'Registration successful', { root: true });
-    //                 })
-    //             },
-    //             error => {
-    //                 commit('registerFailure', error);
-    //                 dispatch('alert/error', error, { root: true });
-    //             }
-    //         );
-    // }
+        userService.register(user)
+            .then(
+                user => {
+                    if (user) {
+                        commit('registerSuccess', user);
+                        window.$nuxt.$router.push('/login')
+                        setTimeout(() => {
+                            // display success message after route change completes
+                            dispatch('alert/success', 'Registration successful', { root: true });
+                        })
+                    }
+                },
+                error => {
+                    commit('registerFailure', error);
+                    dispatch('alert/error', error, { root: true });
+                }
+            );
+    }
 };
