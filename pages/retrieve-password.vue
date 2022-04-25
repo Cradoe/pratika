@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="mt-5">
-                            <Button class="mx-auto" :disabled=" status.loggingIn ">
+                            <Button class="mx-auto" :disabled=" status.submitting ">
                                 <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                                     <fa :icon=" [ 'fas', 'lock' ] "
                                         class="h-5 w-5 text-primary/80 group-hover:text-secondary/50"

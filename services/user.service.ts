@@ -13,12 +13,9 @@ export const userService = {
         }
         return user;
     },
-    retrievePassword: async (loginData: IUser) => {
-        const response = handleAuthorizedResponse(await httpClient.post({ url: "/users/retrieve-password", payload: loginData }));
-        if (response.status === 200) {
-            return true;
-        }
-        return false;
+    retrievePassword: async (userData: IUser) => {
+        const response = handleAuthorizedResponse(await httpClient.post({ url: "/users/retrieve-password", payload: userData }));
+        return response;
     },
     register: async (userData: IUser) => {
         const response = handleAuthorizedResponse(await httpClient.post({ url: "/users/register", payload: userData }));

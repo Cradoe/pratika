@@ -12,7 +12,6 @@ export default {
             .then(
                 user => {
                     commit('loginSuccess', user);
-                    // router.push('/');
                 },
                 error => {
                     commit('requestFailure', error);
@@ -25,13 +24,12 @@ export default {
         commit('logout');
     },
     retrievePassword({ dispatch, commit }: ActionContext<IAccountState, IRootState>, { username }: IUser) {
-        commit('submitPasswordRetrievalRequest', { username });
+        commit('passwordRetrievalRequest', { username });
 
         userService.retrievePassword({ username })
             .then(
                 res => {
                     commit('passwordRetrievalSuccess', res);
-                    // router.push('/');
                 },
                 error => {
                     commit('requestFailure', error);
