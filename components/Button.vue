@@ -1,6 +1,6 @@
 <template>
     <button :type=" type "
-        class="group relative px-12 flex justify-center py-3  border border-transparent text-sm font-medium rounded-md text-white  focus:outline-none focus:ring-2 focus:ring-offset-2"
+        class="group relative px-8 md:px-12 flex justify-center py-2  md:py-3  border border-transparent text-sm font-medium rounded-md text-white  focus:outline-none focus:ring-2 focus:ring-offset-2"
         :class=" bgType " :disabled=" disabled ">
         <slot />
     </button>

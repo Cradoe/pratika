@@ -39,7 +39,7 @@
                             </div>
                         </div>
 
-                        <div class="flex items-center justify-between">
+                        <div class="flex items-center flex-wrap gap-y-3 justify-between">
                             <div class="flex items-center">
                                 <input id="remember-me" name="remember-me" type="checkbox"
                                     class="h-4 w-4 text-primary focus:ring-primary/70 border-primary rounded" />

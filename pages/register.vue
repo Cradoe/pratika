@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div class="hidden md:block">
-            <PageHeroSection hero-image="/login-image.png">
-                Register for a <br class="hidden lg:block" /> Free
-                <HighlightedHeroWord>Account</HighlightedHeroWord>
+       <PageHeroSection hero-image="/login-image.png">
+                <div class="text-center">
+                    Register for a <br class="hidden lg:block" /> Free
+                    <HighlightedHeroWord>Account</HighlightedHeroWord>
+                </div>
             </PageHeroSection>
-        </div>
 
         <Container>
             <div class="mt-20 md:mt-0 flex items-center justify-center  ">
@@ -54,7 +54,7 @@
                             <select id="major" v-model=" $v.form.major.$model " name="major" :class=" formControl ">
                                 <option selected value="">Choose your major</option>
                                 <option
-                                    v-for="(                                                                                                                                      major, index                                                                                                                                      ) in                                                                                                                                       majors                                                                                                                                     "
+                                    v-for="(                                                                                                                                       major, index                                                                                                                                       ) in                                                                                                                                        majors                                                                                                                                      "
                                     :key=" index " :value=" major.slug ">
                                     {{ major.name }}
                                 </option>

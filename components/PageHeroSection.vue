@@ -5,7 +5,7 @@
             <div class="text-2xl md:leading-tight md:text-[2.41rem] lg:text-[3.01rem] dark:text-white font-black">
                 <slot />
             </div>
-            <div class="relative h-auto lg:h-[45vh] w-[24rem] 4xl:w-auto flex justify-center">
+            <div class="relative h-auto lg:h-[45vh] md:w-[24rem] 4xl:w-auto flex justify-center">
                 <nuxt-img :src="heroImage"
                     class="w-[10rem] md:w-[12rem] lg:w-[18rem] 4xl:w-[40rem]  lg:absolute 4xl:relative lg:-bottom-16" />
             </div>
