@@ -1,11 +1,11 @@
 <template>
     <div>
-       <PageHeroSection hero-image="/login-image.png">
-                <div class="text-center">
-                    Register for a <br class="hidden lg:block" /> Free
-                    <HighlightedHeroWord>Account</HighlightedHeroWord>
-                </div>
-            </PageHeroSection>
+        <PageHeroSection hero-image="/login-image.png">
+            <div class="text-center">
+                Register for a <br class="hidden lg:block" /> Free
+                <HighlightedHeroWord>Account</HighlightedHeroWord>
+            </div>
+        </PageHeroSection>
 
         <Container>
             <div class="mt-20 md:mt-0 flex items-center justify-center  ">
@@ -54,7 +54,7 @@
                             <select id="major" v-model=" $v.form.major.$model " name="major" :class=" formControl ">
                                 <option selected value="">Choose your major</option>
                                 <option
-                                    v-for="(                                                                                                                                       major, index                                                                                                                                       ) in                                                                                                                                        majors                                                                                                                                      "
+                                    v-for="(                                                                                                                                        major, index                                                                                                                                        ) in                                                                                                                                         majors                                                                                                                                       "
                                     :key=" index " :value=" major.slug ">
                                     {{ major.name }}
                                 </option>
@@ -96,7 +96,8 @@
                             <span class="text-red-500 text-[0.5rem]">X</span> By
                             registering, you
                             agree to our
-                            <NuxtLink to="/login" class="text-primary hover:text-primary/70">terms and condition
+                            <NuxtLink to="/terms-and-condition" class="text-primary hover:text-primary/70">terms and
+                                condition
                             </NuxtLink>
 
                         </p>

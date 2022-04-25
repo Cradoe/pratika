@@ -2,7 +2,7 @@
     <div>
         <div class="hidden md:block">
             <PageHeroSection hero-image="/login-image.png">
-                Login to Your <br class="hidden lg:block" />
+                Let's get back your <br class="hidden lg:block" />
                 <HighlightedHeroWord>Account</HighlightedHeroWord>
             </PageHeroSection>
         </div>
@@ -27,50 +27,21 @@
                             </div>
 
                         </div>
-                        <div class="py-3">
-                            <label for="password" class="text-sm text-[#AEB1B5] dark:text-white/80">Password</label>
-                            <PasswordReveal id="password" v-model=" $v.form.password.$model " type="password"
-                                name="password" autocomplete="current-password" :classes=" formControl "
-                                placeholder="Password" />
 
-                            <div v-if=" submitted && !$v.form.password.required " class="text-red-400 text-xs">Password
-                                is
-                                required
-                            </div>
-                        </div>
-
-                        <div class="flex items-center flex-wrap gap-y-3 justify-between">
-                            <div class="flex items-center">
-                                <input id="remember-me" name="remember-me" type="checkbox"
-                                    class="h-4 w-4 text-primary focus:ring-primary/70 border-primary rounded" />
-                                <label for="remember-me" class="ml-2 block text-sm text-gray-900 dark:text-white/80">
-                                    Remember me </label>
-                            </div>
-
-                            <div class="text-sm">
-                                <NuxtLink to="/retrieve-password"
-                                    class="font-medium text-secondary hover:text-secondary/70 dark:text-white/80">
-                                    Forgot your
-                                    password?
-                                </NuxtLink>
-                            </div>
-                        </div>
-
-                        <div class="mt-10">
+                        <div class="mt-5">
                             <Button class="mx-auto" :disabled=" status.loggingIn ">
                                 <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                                     <fa :icon=" [ 'fas', 'lock' ] "
                                         class="h-5 w-5 text-primary/80 group-hover:text-secondary/50"
                                         aria-hidden="true" />
                                 </span>
-                                Sign in
+                                Continue
                             </Button>
                         </div>
-                        <div class="text-sm mt-5">
-                            <NuxtLink to="/register"
-                                class="font-medium text-secondary hover:text-secondary/70 dark:text-white/80"> New
-                                user? Register
-                                now for a life-time free access
+                        <div class="text-sm mt-5 text-center">
+                            <NuxtLink to="/login"
+                                class="font-medium text-secondary hover:text-secondary/70 dark:text-white/80"> Click
+                                here to back to login page
                             </NuxtLink>
                         </div>
                     </form>
@@ -89,14 +60,12 @@ import { formControl } from '@/constants/';
 
 
 export default Vue.extend( {
-    name: "LoginPage",
-    layout: 'loginPage',
+    name: "RetrievePassword",
     data () {
         return {
             formControl,
             form: {
-                email: '',
-                password: ''
+                email: ''
             },
             submitted: false
         }
@@ -124,9 +93,6 @@ export default Vue.extend( {
                 email: {
                     required,
                     email
-                },
-                password: {
-                    required
                 }
             },
         }
