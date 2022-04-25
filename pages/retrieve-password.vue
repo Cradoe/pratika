@@ -70,6 +70,11 @@ export default Vue.extend( {
             submitted: false
         }
     },
+    head () {
+        return {
+            title: `Retrieve your password`
+        };
+    },
     computed: {
         status () {
             return this.$store.state.account.status

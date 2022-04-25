@@ -54,7 +54,7 @@
                             <select id="major" v-model=" $v.form.major.$model " name="major" :class=" formControl ">
                                 <option selected value="">Choose your major</option>
                                 <option
-                                    v-for="(                                                                                                                                        major, index                                                                                                                                        ) in                                                                                                                                         majors                                                                                                                                       "
+                                    v-for="(                                                                                                                                         major, index                                                                                                                                         ) in                                                                                                                                          majors                                                                                                                                        "
                                     :key=" index " :value=" major.slug ">
                                     {{ major.name }}
                                 </option>
@@ -134,6 +134,11 @@ export default Vue.extend( {
             majors: availableMajors,
             submitted: false
         }
+    },
+    head () {
+        return {
+            title: `Welcome, register a free account`
+        };
     },
     computed: {
         status () {

@@ -101,6 +101,11 @@ export default Vue.extend( {
             submitted: false
         }
     },
+    head () {
+        return {
+            title: `Welcome back, login tp your account`
+        };
+    },
     computed: {
         status () {
             return this.$store.state.account.status
