@@ -14,12 +14,16 @@ export default {
         state.status = { loggedIn: true };
         state.user = user;
     },
-    loginFailure(state: IAccountState) {
+    logout(state: IAccountState) {
         state.status = {};
         state.user = null;
     },
-    logout(state: IAccountState) {
-        state.status = {};
+    passwordRetrievalRequest(state: IAccountState, user: IUser) {
+        state.status = { submitting: true };
+        state.user = user;
+    },
+    passwordRetrievalSuccess(state: IAccountState, _user: IUser) {
+        state.status = { requestSent: true };
         state.user = null;
     },
     registerRequest(state: IAccountState, _user: IUser) {
@@ -28,7 +32,8 @@ export default {
     registerSuccess(state: IAccountState) {
         state.status = {};
     },
-    registerFailure(state: IAccountState) {
+    requestFailure(state: IAccountState) {
         state.status = {};
+        state.user = null;
     }
 };

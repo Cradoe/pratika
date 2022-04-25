@@ -76,13 +76,13 @@ export default Vue.extend( {
         }
     },
     methods: {
-        ...mapActions( 'account', [ 'login' ] ),
+        ...mapActions( 'account', [ 'retrievePassword' ] ),
         handleSubmit () {
             this.submitted = true;
             if ( this.$v.form.$invalid ) {
                 this.$v.form.$touch();
             } else {
-                this.login( this.form )
+                this.retrievePassword( this.form )
             }
 
         }

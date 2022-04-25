@@ -15,7 +15,7 @@ export default {
                     // router.push('/');
                 },
                 error => {
-                    commit('loginFailure', error);
+                    commit('requestFailure', error);
                     dispatch('alert/error', error, { root: true });
                 }
             );
@@ -23,6 +23,21 @@ export default {
     logout({ commit }: ActionContext<IAccountState, IRootState>) {
         userService.logout();
         commit('logout');
+    },
+    retrievePassword({ dispatch, commit }: ActionContext<IAccountState, IRootState>, { username }: IUser) {
+        commit('submitPasswordRetrievalRequest', { username });
+
+        userService.retrievePassword({ username })
+            .then(
+                res => {
+                    commit('passwordRetrievalSuccess', res);
+                    // router.push('/');
+                },
+                error => {
+                    commit('requestFailure', error);
+                    dispatch('alert/error', error, { root: true });
+                }
+            );
     },
     register({ dispatch, commit }: ActionContext<IAccountState, IRootState>, user: IUser) {
         commit('registerRequest', user);
@@ -40,7 +55,7 @@ export default {
                     }
                 },
                 error => {
-                    commit('registerFailure', error);
+                    commit('requestFailure', error);
                     dispatch('alert/error', error, { root: true });
                 }
             );
