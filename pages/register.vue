@@ -1,15 +1,17 @@
 <template>
     <div>
-        <PageHeroSection hero-image="/login-image.png">
-            Register for a <br class="hidden lg:block" /> Free
-            <HighlightedHeroWord>Account</HighlightedHeroWord>
-        </PageHeroSection>
+        <div class="hidden md:block">
+            <PageHeroSection hero-image="/login-image.png">
+                Register for a <br class="hidden lg:block" /> Free
+                <HighlightedHeroWord>Account</HighlightedHeroWord>
+            </PageHeroSection>
+        </div>
 
         <Container>
-            <div class="flex items-center justify-center  ">
+            <div class="mt-20 md:mt-0 flex items-center justify-center  ">
                 <div
                     class="md:max-w-md lg:max-w-xl w-full px-4 py-12 mx-4 sm:mx-16 md:mx-20  sm:px-6 lg:px-24 pb-0 lg:pb-0 border border-[#E5E5E5] mb-24">
-                    <div class="text-sm pb-12 text-center">
+                    <div class="text-sm pb-12 text-center hidden md:block">
                         <NuxtLink to="/login"
                             class="font-medium text-secondary dark:text-white/80 hover:text-secondary/70 "> Already
                             a
@@ -52,7 +54,7 @@
                             <select id="major" v-model=" $v.form.major.$model " name="major" :class=" formControl ">
                                 <option selected value="">Choose your major</option>
                                 <option
-                                    v-for="(                                                                                                                                major, index                                                                                                                                ) in                                                                                                                                 majors                                                                                                                               "
+                                    v-for="(                                                                                                                                      major, index                                                                                                                                      ) in                                                                                                                                       majors                                                                                                                                     "
                                     :key=" index " :value=" major.slug ">
                                     {{ major.name }}
                                 </option>

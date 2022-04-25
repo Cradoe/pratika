@@ -1,12 +1,13 @@
 <template>
     <div>
-        <PageHeroSection hero-image="/login-image.png">
-            Login to Your <br class="hidden lg:block" />
-            <HighlightedHeroWord>Account</HighlightedHeroWord>
-        </PageHeroSection>
-
+        <div class="hidden md:block">
+            <PageHeroSection hero-image="/login-image.png">
+                Login to Your <br class="hidden lg:block" />
+                <HighlightedHeroWord>Account</HighlightedHeroWord>
+            </PageHeroSection>
+        </div>
         <Container>
-            <div class="flex items-center justify-center ">
+            <div class="mt-20 md:mt-0 flex items-center justify-center ">
                 <div
                     class="md:max-w-md lg:max-w-xl w-full px-4 py-12 mx-4 sm:mx-16 md:mx-20  sm:px-6 lg:p-24 border border-[#E5E5E5] mb-24">
 
