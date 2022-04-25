@@ -1,8 +1,6 @@
 import { httpClient } from "~/services";
 import { IUser } from "~/utils";
 
-
-
 export const userService = {
 
     login: async (loginData: IUser) => {

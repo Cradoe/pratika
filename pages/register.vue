@@ -10,14 +10,16 @@
                 <div
                     class="md:max-w-md lg:max-w-xl w-full px-4 py-12 mx-4 sm:mx-16 md:mx-20  sm:px-6 lg:px-24 pb-0 lg:pb-0 border border-[#E5E5E5] mb-24">
                     <div class="text-sm pb-12 text-center">
-                        <NuxtLink to="/login" class="font-medium text-secondary hover:text-secondary/70 "> Already a
+                        <NuxtLink to="/login"
+                            class="font-medium text-secondary dark:text-white/80 hover:text-secondary/70 "> Already
+                            a
                             member? Click here to login into your account
                         </NuxtLink>
                     </div>
 
                     <form action="#" method="POST" @submit.prevent=" handleSubmit ">
                         <div class="py-3">
-                            <label for="firstname" class="text-[#AEB1B5]">Firstname</label>
+                            <label for="firstname" class="text-sm text-[#AEB1B5] dark:text-white/80">Firstname</label>
                             <input id="firstname" v-model=" $v.form.firstName.$model " name="firstName" type="text"
                                 autocomplete="firstName" :class=" formControl " placeholder="Firstname" />
 
@@ -32,7 +34,7 @@
                             </div>
                         </div>
                         <div class="py-3">
-                            <label for="email" class="text-[#AEB1B5]">Email address</label>
+                            <label for="email" class="text-sm text-[#AEB1B5] dark:text-white/80">Email address</label>
                             <input id="email" v-model=" $v.form.email.$model " name="email" type="email"
                                 autocomplete="email" :class=" formControl " placeholder="Email address" />
 
@@ -46,11 +48,11 @@
 
                         </div>
                         <div class="py-3">
-                            <label for="major" class="text-[#AEB1B5]">Major</label>
+                            <label for="major" class="text-sm text-[#AEB1B5] dark:text-white/80">Major</label>
                             <select id="major" v-model=" $v.form.major.$model " name="major" :class=" formControl ">
                                 <option selected value="">Choose your major</option>
                                 <option
-                                    v-for="(                                                                                                                      major, index                                                                                                                      ) in                                                                                                                       majors                                                                                                                     "
+                                    v-for="(                                                                                                                                major, index                                                                                                                                ) in                                                                                                                                 majors                                                                                                                               "
                                     :key=" index " :value=" major.slug ">
                                     {{ major.name }}
                                 </option>
@@ -61,7 +63,7 @@
 
                         </div>
                         <div class="py-3">
-                            <label for="password" class="text-[#AEB1B5]">Password</label>
+                            <label for="password" class="text-sm text-[#AEB1B5] dark:text-white/80">Password</label>
                             <PasswordReveal id="password" v-model=" $v.form.password.$model " type="password"
                                 name="password" autocomplete="current-password" :classes=" formControl "
                                 placeholder="Password" />
@@ -88,7 +90,7 @@
                         </div>
 
                         <p
-                            class="text-xs text-gray-900 flex items-center gap-1 justify-center pt-12 lg:pt-16 pb-4 flex-wrap">
+                            class="text-xs text-gray-900 dark:text-white/70 flex items-center gap-1 justify-center pt-12 lg:pt-16 pb-4 flex-wrap">
                             <span class="text-red-500 text-[0.5rem]">X</span> By
                             registering, you
                             agree to our
@@ -111,7 +113,7 @@ import { required, email, minLength } from 'vuelidate/lib/validators'
 import { mapActions } from 'vuex';
 
 
-import { availableMajors } from '@/constants/'
+import { availableMajors, formControl } from '@/constants/'
 
 
 export default Vue.extend( {
@@ -119,6 +121,7 @@ export default Vue.extend( {
     layout: 'registerPage',
     data () {
         return {
+            formControl,
             form: {
                 firstName: '',
                 email: '',
@@ -132,9 +135,6 @@ export default Vue.extend( {
     computed: {
         status () {
             return this.$store.state.account.status
-        },
-        formControl () {
-            return "appearance-none rounded relative block w-full px-3 py-3 border border-primary placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary/80 focus:border-primary/80 focus:z-10 sm:text-sm"
         }
     },
     methods: {

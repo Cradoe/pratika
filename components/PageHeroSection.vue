@@ -1,5 +1,5 @@
 <template>
-    <div :class="sectionHeight" class="bg-[#F8FAFC] dark:bg-dark-900 mb-20">
+    <div :class="sectionHeight" class="bg-[#F8FAFC] dark:bg-dark-700 mb-20">
         <Container
             :class-name="sectionHeight + ' flex flex-col gap-y-12 md:flex-row justify-center md:justify-between items-center'">
             <div class="text-2xl md:leading-tight md:text-[2.41rem] lg:text-[3.01rem] dark:text-white font-black">
@@ -12,7 +12,6 @@
         </Container>
     </div>
 </template>
-
 <script lang="ts" setup>
 export default {
     props: {

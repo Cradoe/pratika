@@ -1,0 +1,1 @@
+export const formControl = "appearance-none rounded relative block w-full px-3 py-2 border border-primary placeholder-gray-900 text-gray-900 dark:text-white/80 focus:outline-none focus:ring-primary/80 focus:border-primary/80 focus:z-10 sm:text-sm dark:bg-dark-700"

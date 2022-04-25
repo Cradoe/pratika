@@ -6,13 +6,14 @@
         </PageHeroSection>
 
         <Container>
-            <div class="flex items-center justify-center  ">
+            <div class="flex items-center justify-center ">
                 <div
                     class="md:max-w-md lg:max-w-xl w-full px-4 py-12 mx-4 sm:mx-16 md:mx-20  sm:px-6 lg:p-24 border border-[#E5E5E5] mb-24">
 
                     <form action="#" method="POST" @submit.prevent=" handleSubmit ">
                         <div class="py-3">
-                            <label for="email-address" class="text-[#AEB1B5]">Email address</label>
+                            <label for="email-address" class="text-sm text-[#AEB1B5] dark:text-white/80">Email
+                                address</label>
                             <input id="email-address" v-model=" $v.form.email.$model " name="email" type="email"
                                 autocomplete="email" :class=" formControl " placeholder="Email address" />
 
@@ -26,7 +27,7 @@
 
                         </div>
                         <div class="py-3">
-                            <label for="password" class="text-[#AEB1B5]">Password</label>
+                            <label for="password" class="text-sm text-[#AEB1B5] dark:text-white/80">Password</label>
                             <PasswordReveal id="password" v-model=" $v.form.password.$model " type="password"
                                 name="password" autocomplete="current-password" :classes=" formControl "
                                 placeholder="Password" />
@@ -41,11 +42,14 @@
                             <div class="flex items-center">
                                 <input id="remember-me" name="remember-me" type="checkbox"
                                     class="h-4 w-4 text-primary focus:ring-primary/70 border-primary rounded" />
-                                <label for="remember-me" class="ml-2 block text-sm text-gray-900"> Remember me </label>
+                                <label for="remember-me" class="ml-2 block text-sm text-gray-900 dark:text-white/80">
+                                    Remember me </label>
                             </div>
 
                             <div class="text-sm">
-                                <a href="#" class="font-medium text-secondary hover:text-secondary/70"> Forgot your
+                                <a href="#"
+                                    class="font-medium text-secondary hover:text-secondary/70 dark:text-white/80">
+                                    Forgot your
                                     password?
                                 </a>
                             </div>
@@ -62,7 +66,8 @@
                             </Button>
                         </div>
                         <div class="text-sm mt-5">
-                            <NuxtLink to="/register" class="font-medium text-secondary hover:text-secondary/70 "> New
+                            <NuxtLink to="/register"
+                                class="font-medium text-secondary hover:text-secondary/70 dark:text-white/80"> New
                                 user? Register
                                 now for a life-time free access
                             </NuxtLink>
@@ -78,14 +83,16 @@
 <script setup>
 import Vue from 'vue';
 import { required, email } from 'vuelidate/lib/validators'
-
 import { mapActions } from 'vuex';
+import { formControl } from '@/constants/';
+
 
 export default Vue.extend( {
     name: "LoginPage",
     layout: 'loginPage',
     data () {
         return {
+            formControl,
             form: {
                 email: '',
                 password: ''
@@ -96,9 +103,6 @@ export default Vue.extend( {
     computed: {
         status () {
             return this.$store.state.account.status
-        },
-        formControl () {
-            return "appearance-none rounded relative block w-full px-3 py-2 border border-primary placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary/80 focus:border-primary/80 focus:z-10 sm:text-sm"
         }
     },
     methods: {

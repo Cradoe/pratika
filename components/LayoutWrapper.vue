@@ -1,7 +1,9 @@
 <template>
     <div class="bg-white dark:bg-dark-900" :class=" theme.dark ? 'dark' : 'light' ">
-        <GlobalAlert />
-        <slot />
+        <div class="bg-white dark:bg-dark-900">
+            <GlobalAlert />
+            <slot />
+        </div>
     </div>
 </template>
 
