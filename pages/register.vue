@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageHeroSection hero-image="/login-image.png">
+        <PageHeroSection hero-image="/login-image.png" class="mb-20">
             <div class="text-center">
                 Register for a <br class="hidden lg:block" /> Free
                 <HighlightedHeroWord>Account</HighlightedHeroWord>
@@ -54,7 +54,7 @@
                             <select id="major" v-model=" $v.form.major.$model " name="major" :class=" formControl ">
                                 <option selected value="">Choose your major</option>
                                 <option
-                                    v-for="(                                                                                                                                         major, index                                                                                                                                         ) in                                                                                                                                          majors                                                                                                                                        "
+                                    v-for="(                                                                                                                                           major, index                                                                                                                                           ) in                                                                                                                                            majors                                                                                                                                          "
                                     :key=" index " :value=" major.slug ">
                                     {{ major.name }}
                                 </option>
@@ -81,7 +81,7 @@
                         </div>
 
                         <div class="mt-10">
-                            <Button class="mx-auto" :disabled=" status.registering ">
+                            <Button type="submit" class="mx-auto" :disabled=" status.registering ">
                                 <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                                     <fa :icon=" [ 'fas', 'lock' ] "
                                         class="h-5 w-5 text-primary/80 group-hover:text-secondary/50"

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="hidden md:block">
-            <PageHeroSection hero-image="/login-image.png">
+            <PageHeroSection hero-image="/login-image.png" class="mb-20">
                 Let's get back your <br class="hidden lg:block" />
                 <HighlightedHeroWord>Account</HighlightedHeroWord>
             </PageHeroSection>
@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="mt-5">
-                            <Button class="mx-auto" :disabled=" status.submitting ">
+                            <Button type="submit" class="mx-auto" :disabled=" status.submitting ">
                                 <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                                     <fa :icon=" [ 'fas', 'lock' ] "
                                         class="h-5 w-5 text-primary/80 group-hover:text-secondary/50"

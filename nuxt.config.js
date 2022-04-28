@@ -68,7 +68,15 @@ export default {
 
   // Nuxt image optimization
   image: {
-    // Options
+    providers: {
+      customProvider: {
+        name: 'NextProject', // optional value to overrider provider name
+        provider: '~/providers/custom', // Path to custom provider
+        options: {
+          // ... provider options
+        }
+      }
+    }
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

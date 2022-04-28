@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="hidden md:block">
-            <PageHeroSection hero-image="/login-image.png">
+            <PageHeroSection hero-image="/login-image.png" class="mb-20">
                 About <HighlightedHeroWord>Us</HighlightedHeroWord>
             </PageHeroSection>
         </div>
@@ -73,55 +73,17 @@
     </div>
 </template>
 
-<script setup>
-    import Vue from 'vue';
-    import { required, email } from 'vuelidate/lib/validators'
-    import { mapActions } from 'vuex';
-    import { formControl, projectInfo } from '@/constants/';
+<script>
+import Vue from 'vue';
+import { projectInfo } from '@/constants/';
 
 
-    export default Vue.extend( {
-        name: "AboutUs",
-        head () {
-            return {
-                title: `About Us | ${projectInfo.PROJECT_NAME}`
-            };
-        },
-        data () {
-            return {
-                formControl,
-                form: {
-                    email: ''
-                },
-                submitted: false
-            }
-        },
-        computed: {
-            status () {
-                return this.$store.state.account.status
-            }
-        },
-        methods: {
-            ...mapActions( 'account', [ 'retrievePassword' ] ),
-            handleSubmit () {
-                this.submitted = true;
-                if ( this.$v.form.$invalid ) {
-                    this.$v.form.$touch();
-                } else {
-                    this.retrievePassword( this.form )
-                }
-
-            }
-        },
-        validations () {
-            return {
-                form: {
-                    email: {
-                        required,
-                        email
-                    }
-                },
-            }
-        }
-    } )
+export default Vue.extend( {
+    name: "AboutUs",
+    head () {
+        return {
+            title: `About Us | ${projectInfo.PROJECT_NAME}`
+        };
+    }
+} )
 </script>
