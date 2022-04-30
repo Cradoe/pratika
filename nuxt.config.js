@@ -71,7 +71,7 @@ export default {
     providers: {
       customProvider: {
         name: 'NextProject', // optional value to overrider provider name
-        provider: '~/providers/custom', // Path to custom provider
+        provider: '~/providers/NextProject', // Path to custom provider
         options: {
           // ... provider options
         }

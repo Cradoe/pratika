@@ -1,13 +1,20 @@
 <template>
-    <section class="g:lpy-8">
+    <section class="lg:py-8">
+
         <DashboardProjectCard v-for="(project, index) in recommendedProjects" :key="index" :number="index+1"
             :project="project">
+
             <template #cta-button>
                 <Button mode="secondary" class="md:w-6/12">View Details</Button>
                 <Button class="md:w-6/12">Start Project</Button>
             </template>
 
+            <template #details-slide>
+                <ProjectDetailsSlide :project="project" />
+            </template>
+
         </DashboardProjectCard>
+
     </section>
 </template>
 <script>
