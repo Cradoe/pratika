@@ -1,5 +1,5 @@
 type User = {
-    token: string;
+    token: Object | string;
 }
 export const authHeader = () => {
     // return authorization header with jwt token

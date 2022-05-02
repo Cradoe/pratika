@@ -1,20 +1,20 @@
 <template>
     <section class="py-8 lg:py-16 text-dark-900">
-        <div class="flex flex-col xl:flex-row gap-y-2 gap-x-10 relative">
-            <div class="relative">
+        <div class="flex flex-col xl:flex-row gap-y-2 gap-x-20 relative">
+            <div class="relative w-[65vw]">
                 <div
                     class="absolute left-0 z-10 top-0 h-full w-11/12 rounded-3xl border border-dotted border-primary border-r-0 lg:border-r">
                 </div>
-                <nuxt-img class="w-[100vw]  rounded-3xl" :src=" project.image " provider="NextProject"
+                <nuxt-img class="w-full rounded-3xl" :src=" project.image " provider="NextProject"
                     :alt=" project.title " />
             </div>
-            <div>
+            <div class="w-[35vw]">
                 <h1 class="hidden xl:block font-black text-[#C4C4C4] text-8xl text-center italic">#{{ number }}</h1>
                 <ul class="border border-dotted border-t-0 xl:border-t  border-primary  h-auto text-sm mt-5">
                     <li class="px-4 py-4 border-dotted border-t-0 xl:border-t border border-b-primary">
                         <span class="font-semibold">Project Name: </span> {{ project.title }}
                     </li>
-                    <li v-for="(                                                 feature, index                                                 ) in                                                  project.features                                                 "
+                    <li v-for="(                                                              feature, index                                                              ) in                                                               project.features                                                              "
                         :key=" index " class="px-4 py-4 border border-dotted border-b-primary">
                         <span class="font-semibold">{{ feature.title }}:</span>
                         <span v-if=" Array.isArray( feature.value ) ">
@@ -32,7 +32,8 @@
                     <li class="px-4 py-7 flex flex-col md:flex-row justify-between gap-y-4 gap-x-10">
                         <Button v-if=" viewDetailsButton " mode="secondary" class="md:w-6/12"
                             @click=" showDetailsSlide() ">View Details</Button>
-                        <Button v-if=" enrollButton " class="md:w-6/12">Start Project</Button>
+                        <Button v-if=" enrollButton " class="md:w-6/12" @click=" enrollForProject() ">Start
+                            Project</Button>
                     </li>
                 </ul>
             </div>
@@ -42,9 +43,10 @@
         <ProjectDetailsSlide :project=" project " :show=" detailsVisibility ">
 
             <template #cta-buttons>
-                <Button v-if=" enrollButton " class="md:w-6/12" @click=" enrollForProject() ">Start Project</Button>
+                <Button v-if=" enrollButton " class="md:w-6/12"
+                    @click=" enrollForProject() ">Start&nbsp;Project</Button>
 
-                <Button mode="secondary" class="md:w-6/12" @click=" closeDetails() ">Close Details</Button>
+                <Button mode="secondary" class="md:w-6/12" @click=" closeDetails() ">Close&nbsp;Details</Button>
             </template>
         </ProjectDetailsSlide>
 
