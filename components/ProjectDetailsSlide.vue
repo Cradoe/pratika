@@ -1,5 +1,6 @@
 <template>
-    <div class="fixed top-0 left-0 bg-black/30 w-[100vw] h-[100vh] z-30 flex justify-end">
+    <div class="transition-all fixed transform duration-500  top-0 left-0 bg-black/30 w-[100vw] h-[100vh] z-30 flex justify-end"
+        :class=" show && visible ? 'translate-x-0' : '-translate-x-[100vw]' ">
         <div class="bg-white h-full w-[50vw] overflow-y-auto">
 
             <ul class="border  border-t-0 xl:border-t border-dotted border-primary w-10/12 mx-auto h-auto text-sm mt-5">
@@ -7,8 +8,8 @@
                 <li class="px-4 py-4 border-t-0 xl:border-t border border-dotted border-b-primary">
                     <span class="font-semibold">Project Name: </span> {{ project.title }}
                 </li>
-                <li v-for="(                   feature, index                   ) in                    project.features                   "
-                    :key=" index " class="px-4 py-4 border border-b-primary">
+                <li v-for="(                                                                      feature, index                                                                      ) in                                                                       project.features                                                                      "
+                    :key=" 'feature' + index " class="px-4 py-4 border border-dotted border-b-primary">
                     <span class="font-semibold">{{ feature.title }}:</span>
                     <span v-if=" Array.isArray( feature.value ) ">
                         {{ feature.value.join( " , " ) }}
@@ -17,8 +18,8 @@
                         {{ feature.value }}
                     </span>
                 </li>
-                <li v-for="(                   info, index                   ) in                    project.additionalInfo                   "
-                    :key=" index " class="px-4 py-4 border border-b-primary">
+                <li v-for="(                                                                      info, index                                                                      ) in                                                                       project.additionalInfo                                                                      "
+                    :key=" 'info' + index " class="px-4 py-4 border border-dotted border-b-primary">
                     <span class="font-semibold">{{ info.title }}:</span>
                     <span v-if=" Array.isArray( info.value ) ">
                         {{ info.value.join( " , " ) }}
@@ -28,11 +29,11 @@
                     </span>
                 </li>
 
-                <li class="px-4 py-4 border border-b-primary">
+                <li class="px-4 py-4 border border-dotted border-b-primary">
                     <span class="font-semibold">Relevant Resources</span>
 
-                    <div v-for="(                   resource, index                   ) in                    project.resources                   "
-                        :key=" index ">
+                    <div v-for="(                                                                      resource, index                                                                      ) in                                                                       project.resources                                                                      "
+                        :key=" 'resource' + index ">
                         <span>( {{ index + 1 }} )</span>
                         <a :href=" resource.link " class="text-primary font-bold">{{ resource.title }} </a>
                     </div>
@@ -44,6 +45,8 @@
                 </li>
                 <li class="px-4 py-7 flex flex-col md:flex-row justify-between gap-y-4 gap-x-10">
                     <slot name="cta-button"></slot>
+
+                    <Button mode="secondary" class="md:w-6/12" @click=" hideDetails() ">Close Details</Button>
                 </li>
             </ul>
         </div>
@@ -52,9 +55,28 @@
 <script>
 export default {
     props: {
+        show: {
+            type: Boolean,
+            default: false
+        },
         project: {
             type: Object,
             required: true
+        }
+    },
+    data () {
+        return {
+            visible: this.show
+        }
+    },
+    watch: {
+        show ( newVal ) {
+            this.visible = newVal
+        }
+    },
+    methods: {
+        hideDetails () {
+            this.visible = false
         }
     }
 }

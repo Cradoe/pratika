@@ -14,8 +14,8 @@
                     <li class="px-4 py-4 border-t-0 xl:border-t border border-b-primary">
                         <span class="font-semibold">Project Name: </span> {{ project.title }}
                     </li>
-                    <li v-for="(  feature, index  ) in   project.features  " :key=" index "
-                        class="px-4 py-4 border border-b-primary">
+                    <li v-for="(                         feature, index                         ) in                          project.features                         "
+                        :key=" index " class="px-4 py-4 border border-b-primary">
                         <span class="font-semibold">{{ feature.title }}:</span>
                         <span v-if=" Array.isArray( feature.value ) ">
                             {{ feature.value.join( " , " ) }}
@@ -30,13 +30,14 @@
                         <p>{{ project.description }}</p>
                     </li>
                     <li class="px-4 py-7 flex flex-col md:flex-row justify-between gap-y-4 gap-x-10">
+                        <Button mode="secondary" class="md:w-6/12" @click=" showDetailsSlide() ">View Details</Button>
                         <slot name="cta-button"></slot>
                     </li>
                 </ul>
             </div>
 
         </div>
-        <slot name="details-slide"></slot>
+        <slot name="details-slide" :show=" detailsSlide "></slot>
     </section>
 </template>
 <script>
@@ -49,6 +50,17 @@ export default {
         project: {
             type: Object,
             required: true
+        }
+    },
+    data () {
+        return {
+            detailsSlide: false
+        }
+    },
+    methods: {
+        showDetailsSlide () {
+            // bug: To be fixed
+            this.detailsSlide = !this.detailsSlide;
         }
     }
 }
