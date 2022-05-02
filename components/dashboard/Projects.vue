@@ -2,26 +2,14 @@
     <section class="lg:py-8">
 
         <DashboardProjectCard
-            v-for="(               project, index               ) in                recommendedProjects               "
-            :key=" index " :number=" index + 1 " :project=" project ">
-
-            <template #cta-button>
-                <Button class="md:w-6/12">Start Project</Button>
-            </template>
-            <template #details-slide=" props ">
-                <ProjectDetailsSlide :project=" project " :show=" props.show ">
-                    <template #cta-button>
-                        <Button class="md:w-6/12">Start Project</Button>
-                    </template>
-                </ProjectDetailsSlide>
-            </template>
-
-
-        </DashboardProjectCard>
+            v-for="(                         project, index                         ) in                          recommendedProjects                         "
+            :key=" index " :number=" index + 1 " :project=" project " :cta=" ctaButtons " />
 
     </section>
 </template>
 <script>
+
+import { ctaLabels } from "@/constants/"
 export default {
     name: "NuxtProjects",
     data () {
@@ -103,7 +91,8 @@ export default {
                     } ],
                     description: "This is a Remote Job Hero Header - Web Design. Hope you guys will like it. Let me know your thought's on that. Your feedback and appreciation is always welcome."
                 }
-            ]
+            ],
+            ctaButtons: [ ctaLabels.ENROLL_FOR_PROJECT, ctaLabels.VIEW_DETAILS ]
         }
     }
 }

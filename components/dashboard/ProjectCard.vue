@@ -14,7 +14,7 @@
                     <li class="px-4 py-4 border-dotted border-t-0 xl:border-t border border-b-primary">
                         <span class="font-semibold">Project Name: </span> {{ project.title }}
                     </li>
-                    <li v-for="(                             feature, index                             ) in                              project.features                             "
+                    <li v-for="(                                                 feature, index                                                 ) in                                                  project.features                                                 "
                         :key=" index " class="px-4 py-4 border border-dotted border-b-primary">
                         <span class="font-semibold">{{ feature.title }}:</span>
                         <span v-if=" Array.isArray( feature.value ) ">
@@ -30,22 +30,38 @@
                         <p>{{ project.description }}</p>
                     </li>
                     <li class="px-4 py-7 flex flex-col md:flex-row justify-between gap-y-4 gap-x-10">
-                        <Button mode="secondary" class="md:w-6/12" @click=" showDetailsSlide() ">View Details</Button>
-                        <slot name="cta-button"></slot>
+                        <Button v-if=" viewDetailsButton " mode="secondary" class="md:w-6/12"
+                            @click=" showDetailsSlide() ">View Details</Button>
+                        <Button v-if=" enrollButton " class="md:w-6/12">Start Project</Button>
                     </li>
                 </ul>
             </div>
 
         </div>
-        <slot name="details-slide" :show=" detailsSlide "></slot>
+
+        <ProjectDetailsSlide :project=" project " :show=" detailsVisibility ">
+
+            <template #cta-buttons>
+                <Button v-if=" enrollButton " class="md:w-6/12" @click=" enrollForProject() ">Start Project</Button>
+
+                <Button mode="secondary" class="md:w-6/12" @click=" closeDetails() ">Close Details</Button>
+            </template>
+        </ProjectDetailsSlide>
+
+
     </section>
 </template>
 <script>
+import { ctaLabels } from "@/constants/"
 export default {
     props: {
         number: {
             type: Number || String,
             required: true
+        },
+        cta: {
+            type: Array || String,
+            default: ''
         },
         project: {
             type: Object,
@@ -57,9 +73,34 @@ export default {
             detailsSlide: false
         }
     },
+    computed: {
+        viewDetailsButton () {
+            if ( this.cta.includes( ctaLabels.VIEW_DETAILS ) ) {
+                return true;
+            } else {
+                return false
+            }
+        },
+        enrollButton () {
+            if ( this.cta.includes( ctaLabels.ENROLL_FOR_PROJECT ) ) {
+                return true;
+            } else {
+                return false
+            }
+        },
+        detailsVisibility () {
+            return this.detailsSlide;
+        }
+    },
     methods: {
         showDetailsSlide () {
-            this.detailsSlide = !this.detailsSlide;
+            this.detailsSlide = true;
+        },
+        enrollForProject () {
+
+        },
+        closeDetails () {
+            this.detailsSlide = false;
         }
     }
 }

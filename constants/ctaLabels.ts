@@ -1,0 +1,4 @@
+export const ctaLabels = {
+    ENROLL_FOR_PROJECT: "ENROLL_FOR_PROJECT",
+    VIEW_DETAILS: "VIEW_DETAILS"
+}
