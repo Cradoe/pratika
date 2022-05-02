@@ -1,7 +1,6 @@
 import { catchError, errorHandler } from "~/helpers";
 import { httpClient } from "~/services";
 
-
 export const enrollToProject = async (id: String | Number) => {
     try {
         const response = await httpClient.post({ url: `/projects/${id}/enroll` });
