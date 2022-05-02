@@ -109,7 +109,7 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import Vue from 'vue';
 import { required, email, minLength } from 'vuelidate/lib/validators'
 

@@ -14,7 +14,7 @@
                     <li class="px-4 py-4 border-dotted border-t-0 xl:border-t border border-b-primary">
                         <span class="font-semibold">Project Name: </span> {{ project.title }}
                     </li>
-                    <li v-for="(                                                              feature, index                                                              ) in                                                               project.features                                                              "
+                    <li v-for="(                                                                feature, index                                                                ) in                                                                 project.features                                                                "
                         :key=" index " class="px-4 py-4 border border-dotted border-b-primary">
                         <span class="font-semibold">{{ feature.title }}:</span>
                         <span v-if=" Array.isArray( feature.value ) ">

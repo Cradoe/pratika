@@ -23,22 +23,22 @@
 </template>
 
 <script>
-    import Vue from 'vue';
-    import { projectInfo } from '@/constants/';
+import Vue from 'vue';
+import { projectInfo } from '@/constants/';
 
 
-    export default Vue.extend( {
-        name: "DashboardPage",
-        data () {
-            return {
-                currentMajor: "Front-end Development",
-                currentLevel: "Easy"
-            }
-        },
-        head () {
-            return {
-                title: `Dashboard | ${projectInfo.PROJECT_NAME}`
-            };
+export default Vue.extend( {
+    name: "DashboardPage",
+    data () {
+        return {
+            currentMajor: "Front-end Development",
+            currentLevel: "Easy"
         }
-    } )
+    },
+    head () {
+        return {
+            title: `Dashboard | ${projectInfo.PROJECT_NAME}`
+        };
+    }
+} )
 </script>

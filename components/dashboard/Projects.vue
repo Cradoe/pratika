@@ -1,17 +1,44 @@
 <template>
     <section class="lg:py-8">
-
+        <Alert v-if=" isError " :alert=" { 'message': error } " />
         <DashboardProjectCard
-            v-for="(                         project, index                         ) in                          recommendedProjects                         "
+            v-for="(                                              project, index                                              ) in                                               recommendedProjects                                              "
             :key=" index " :number=" index + 1 " :project=" project " :cta=" ctaButtons " />
 
     </section>
 </template>
 <script>
 
+import { useQuery, useQueryClient, dehydrate } from "vue-query";
+import {
+    defineComponent,
+    onServerPrefetch,
+    useContext,
+} from "@nuxtjs/composition-api";
+
 import { ctaLabels } from "@/constants/"
-export default {
+import { getRecommendedProjects } from "@/services/"
+
+export default defineComponent( {
     name: "NuxtProjects",
+    setup () {
+        const { isLoading, isError, data, error, suspense } = useQuery( "recommendedProjects", getRecommendedProjects, {
+            // If you do not want data to be refetched on the client, set a staleTime to high enough time
+            staleTime: 1000,
+        } );
+        onServerPrefetch( async () => {
+            const { ssrContext } = useContext();
+            const queryClient = useQueryClient();
+            await suspense();
+            ssrContext.nuxt.vueQueryState = dehydrate( queryClient );
+        } );
+        return {
+            data,
+            isLoading,
+            isError,
+            error
+        };
+    },
     data () {
         return {
             // recommendedProjects should be fetched from server when API is ready.
@@ -94,6 +121,7 @@ export default {
             ],
             ctaButtons: [ ctaLabels.ENROLL_FOR_PROJECT, ctaLabels.VIEW_DETAILS ]
         }
-    }
-}
+    },
+} );
+
 </script>

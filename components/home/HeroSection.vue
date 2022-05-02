@@ -24,7 +24,7 @@
                     class="border border-primary outline-0 px-6 lg:px-10 py-3 lg:py-4 text-[#475569] bg-[#C4C4C4]/5 text-left">
                     <option>Choose your major</option>
                     <option
-                        v-for="(                       major, index                       ) in                        majors                      "
+                        v-for="(                        major, index                        ) in                         majors                       "
                         :key=" index " :value=" major.slug ">
                         {{ major.name }}
                     </option>

@@ -12,7 +12,7 @@
                     <li class="hover:text-slate-500">
                         <NuxtLink to="/about">Sponsor Project</NuxtLink>
                     </li>
-                    <li v-for="(        publicLink, index        ) in         projectInfo.PUBLIC_LINKS        "
+                    <li v-for="(          publicLink, index          ) in           projectInfo.PUBLIC_LINKS          "
                         :key=" index " class="hover:text-slate-500">
                         <a :href=" publicLink.url " target="_blank" rel="nofollow">{{ publicLink.name }}</a>
                     </li>
@@ -22,7 +22,7 @@
             <div>
                 <h3 class="text-primary font-bold text-xl">Majors</h3>
                 <ul class="text-[1.008rem] text-[#E5E5E5] mt-4 list-disc list-inside">
-                    <li v-for="(        major, index        ) of         majors        " :key=" index "
+                    <li v-for="(          major, index          ) of           majors          " :key=" index "
                         class="hover:text-slate-500">
                         {{ major.name }}
                     </li>
@@ -31,7 +31,7 @@
             <div>
                 <h3 class="text-primary font-bold text-xl">Contributors</h3>
                 <div class="flex flex-wrap gap-3 mt-4">
-                    <a v-for="(        contributor, index        ) of         contributors        " :key=" index "
+                    <a v-for="(          contributor, index          ) of           contributors          " :key=" index "
                         :href=" contributor.html_url "
                         :title=" `${contributor.login} with ${contributor.contributions} contributions` "
                         target="_blank" rel="nofollow">

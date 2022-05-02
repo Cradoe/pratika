@@ -81,7 +81,7 @@
     </div>
 </template>
 
-<script setup>
+<script>
 import Vue from 'vue';
 import { required, email } from 'vuelidate/lib/validators'
 import { mapActions } from 'vuex';
