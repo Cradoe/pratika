@@ -1,18 +1,22 @@
-import Vue from "vue";
-import { VueQueryPlugin, QueryClient, } from "vue-query";
+/**
+ * BUG: Error in @nuxtjs/composition-api +  vue query plugin
+ */
 
-export default ( _context ) => {
-    // Modify your Vue Query global settings here
-    const queryClient = new QueryClient( {
-        defaultOptions: { queries: { staleTime: 1000 } },
-    } );
-    const options = { queryClient };
+// import Vue from "vue";
+// import { VueQueryPlugin, QueryClient, } from "vue-query";
 
-    Vue.use( VueQueryPlugin, options );
+// export default ( _context ) => {
+//     // Modify your Vue Query global settings here
+//     const queryClient = new QueryClient( {
+//         defaultOptions: { queries: { staleTime: 1000 } },
+//     } );
+//     const options = { queryClient };
 
-    // if ( process.client ) {
-    //     if ( context.nuxtState && context.nuxtState[ "vue-query" ] ) {
-    //         hydrate( queryClient, context.nuxtState[ "vue-query" ] );
-    //     }
-    // }
-};
+//     Vue.use( VueQueryPlugin, options );
+
+//     if ( process.client ) {
+//         if ( context.nuxtState && context.nuxtState[ "vue-query" ] ) {
+//             hydrate( queryClient, context.nuxtState[ "vue-query" ] );
+//         }
+//     }
+// };

@@ -3,15 +3,12 @@
         <div class="bg-white dark:bg-dark-900">
             <GlobalAlert />
             <slot />
-            <VueQueryDevTools />
         </div>
     </div>
 </template>
 
 <script>
-import { VueQueryDevTools } from "vue-query/devtools";
 export default {
-    components: { VueQueryDevTools },
     computed: {
         theme () {
             return this.$store.state.theme
