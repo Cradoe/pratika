@@ -1,8 +1,7 @@
 <template>
-    <section class="dark:bg-secondary/95 py-16">
+    <section class="dark:bg-dark-900 py-16">
         <HomeNumberedSectionHeading number=" 1 " heading=" Pick your major"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since" />
-
+            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy textw ever since" />
         <div class="py-10">
             <div class="container mx-auto">
                 <!-- <div class="sm:hidden relative w-11/12 mx-auto bg-white rounded">
@@ -26,20 +25,21 @@
                 </div> -->
                 <div class="hidden sm:block">
                     <ul class="flex justify-center">
-                        <li v-for="(                                       major, index                                       ) in                                        majors                                                                                                                         "
+                        <li v-for="(                                                 major, index                                                 ) in                                                  majors                                                                                                                                   "
                             :key=" index " ref="tabs" :data-id=" index " class="tab-item">
                             <div class="flex justify-center items-center rounded-3xl item-tab-heading hover:shadow-2xl border border-[#E5E5E5] px-4 py-2 text-sm mb-3 cursor-pointer mr-5"
                                 @click=" activeTab( $event ) ">
-                                <span class="ml-1 font-normal text-gray-600">{{ major.name }}</span>
+                                <span class="ml-1 font-normal text-gray-600 dark:text-white">{{ major.name }}</span>
                             </div>
                         </li>
                     </ul>
                     <div>
-                        <div v-for="(                                      major, index                                                                                                                        ) in                                                                                                                         majors                                                                                                                        "
+                        <div v-for="(                                                major, index                                                                                                                                  ) in                                                                                                                                   majors                                                                                                                                  "
                             :key=" index " ref="tabContent" :data-id=" index "
-                            class="w-full h-1 text-gray-600 rounded-t-md hidden mt-10">
+                            class="w-full h-1  rounded-t-md hidden mt-10">
                             <div v-if=" major.toolsImage ">
-                                <nuxt-img v-for="(       image, imageIndex       ) in        major.toolsImage       "
+                                <nuxt-img
+                                    v-for="(                 image, imageIndex                 ) in                  major.toolsImage                 "
                                     :key=" imageIndex " :src=" image " class="w-32" />
                             </div>
                         </div>
