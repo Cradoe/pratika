@@ -7,10 +7,10 @@
             <div class="flex flex-col gap-y-3 md:flex-row justify-between text-sm mt-5 mb-16">
                 <div class="flex justify-between md:justify-start md:gap-12 text-secondary">
                     <div>
-                        Major: <span class="font-semibold"> {{ currentMajor.name  }}</span>
+                        Major: <span class="font-semibold capitalize"> {{ currentMajor.name }}</span>
                     </div>
                     <div>
-                        Level: <span class="font-semibold">{{ currentLevel }}</span>
+                        Level: <span class="font-semibold capitalize">{{ currentLevel }}</span>
                     </div>
                 </div>
                 <Button mode="secondary" class="rounded px-10 py-2 md:py-2">Change
@@ -26,8 +26,6 @@
 import Vue from 'vue';
 import { projectInfo, availableMajors} from '@/contents/';
 
-// const { data } =  await this.$axios.get(`/api/projects/${major}/${level}`);
-// Front-end Development
 export default Vue.extend( {
     name: "RecommendedProjectsPage",
     asyncData({ params }) {

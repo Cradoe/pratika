@@ -32,8 +32,8 @@
                     <li class="px-4 py-7 flex flex-col md:flex-row justify-between gap-y-4 gap-x-10">
                         <Button v-if=" viewDetailsButton " mode="secondary" class="md:w-6/12"
                             @click=" showDetailsSlide() ">View Details</Button>
-                        <Button v-if=" enrollButton " class="md:w-6/12" @click=" enrollForProject() ">Start
-                            Project</Button>
+                            
+                        <Button v-if=" tweetProjectButton " type="link" target="_blank" rel="nofollow" :href="'https://twitter.com/intent/tweet?text='+tweetMessage" mode="twitter" class="md:w-6/12">Tweet Project</Button>
                     </li>
                 </ul>
             </div>
@@ -43,8 +43,7 @@
         <ProjectDetailsSlide :project=" project " :show=" detailsVisibility ">
 
             <template #cta-buttons>
-                <Button v-if=" enrollButton " class="md:w-6/12"
-                    @click=" enrollForProject() ">Start&nbsp;Project</Button>
+                <Button v-if=" tweetProjectButton " type="link" target="_blank" rel="nofollow" :href="'https://twitter.com/intent/tweet?text='+tweetMessage" mode="twitter" class="md:w-6/12">Tweet Project</Button>
 
                 <Button mode="secondary" class="md:w-6/12" @click=" closeDetails() ">Close&nbsp;Details</Button>
             </template>
@@ -83,12 +82,15 @@ export default {
                 return false
             }
         },
-        enrollButton () {
-            if ( this.cta.includes( ctaLabels.ENROLL_FOR_PROJECT ) ) {
+        tweetProjectButton () {
+            if ( this.cta.includes( ctaLabels.TWEET_PROJECT ) ) {
                 return true;
             } else {
                 return false
             }
+        },
+        tweetMessage () {
+            return `Check out this project I made: ${this.project.title}`
         },
         detailsVisibility () {
             return this.detailsSlide;
@@ -97,9 +99,6 @@ export default {
     methods: {
         showDetailsSlide () {
             this.detailsSlide = true;
-        },
-        enrollForProject () {
-
         },
         closeDetails () {
             this.detailsSlide = false;

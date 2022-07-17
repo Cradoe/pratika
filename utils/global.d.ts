@@ -1,16 +1,8 @@
-export interface IUser {
-    username?: string;
-    password?: string;
-    token?: string
-}
-
-export interface IRootState {
-
-}
+export interface IRootState { }
 
 export interface IProjectFeature {
     title: String,
-    Value: String | String[]
+    value: String | String[]
 }
 
 export interface IProjectResource {
@@ -26,4 +18,17 @@ export interface IProject {
     features?: IProjectFeature[];
     additionalInfo?: IProjectFeature[];
     resources?: IProjectResource[]
+}
+
+export interface IProjectNiche {
+    beginner?: IProject[],
+    intermediate?: IProject[],
+    advanced?: IProject[]
+}
+
+export interface IRecommendedProject {
+    "front-end"?: IProjectNiche,
+    "backend"?: IProjectNiche,
+    "ui-ux"?: IProjectNiche,
+    "all"?: IProjectNiche
 }

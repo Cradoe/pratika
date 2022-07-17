@@ -1,3 +1,2 @@
-
-export const experienceLevels: string[] = ["Novice", "Intermediate", "Expert"];
+export const experienceLevels: string[] = ["Beginner", "Intermediate", "Advanced"];
 
