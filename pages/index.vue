@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { projectInfo } from '@/constants/';
+import { projectInfo } from '@/contents/';
 
 export default Vue.extend({
   name: "IndexPage",

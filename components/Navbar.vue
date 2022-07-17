@@ -6,10 +6,9 @@
                 <nuxt-img :src=" theme.dark ? '/logo-white.png' : '/logo.png' " class="w-32" />
             </NuxtLink>
 
-            <!-- Mobile login button -->
+          
             <div class="lg:hidden flex items-center gap-4">
                 <AppDarkModeToggle />
-                <slot name="cta-button"></slot>
             </div>
         </div>
 
@@ -35,8 +34,6 @@
                         </path>
                     </svg>
                 </a>
-
-                <slot name="cta-button"></slot>
             </div>
         </div>
     </nav>

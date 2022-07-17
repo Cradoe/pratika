@@ -52,7 +52,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import { availableMajors, projectInfo } from '@/constants/'
+import { projectInfo, availableMajors } from '@/contents/'
 
 export default {
     name: 'NuxtFooter',

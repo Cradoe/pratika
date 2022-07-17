@@ -1,5 +1,4 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
-import { authHeader } from "~/helpers";
 
 const apiResource = () => {
 	const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL!;
@@ -16,7 +15,7 @@ const apiResource = () => {
 	});
 
 	service.interceptors.request.use((config: AxiosRequestConfig) => {
-		const authToken = authHeader();
+		const authToken = null;
 
 		if (!authToken) return config;
 		config.headers!.Authorization = authToken;

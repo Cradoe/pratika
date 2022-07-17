@@ -18,31 +18,62 @@
                 industry.
                 Lorem
                 Ipsum has been the
-                industry's standard dummy text ever since</p>
-            <form class="mt-16 md:mt-9 lg:mt-12 flex gap-x-10 gap-y-3 justify-center flex-col md:flex-row">
+                industry's standard dummy text ever sincez</p>
+            <form class="mt-16 md:mt-9 lg:mt-12 flex gap-x-10 gap-y-3 justify-center flex-col md:flex-row" method="get" @submit.prevent="handleFormSubmit">
                 <select
-                    class="border border-primary outline-0 px-6 lg:px-10 py-3 lg:py-4 text-[#475569] bg-[#C4C4C4]/5 text-left">
-                    <option>Choose your major</option>
+                    v-model="form.niche"
+                    class="border border-primary outline-0 px-6 lg:px-10 py-3 lg:py-4 text-[#475569] bg-[#C4C4C4]/5 text-left"
+                    required
+                    >
+                    <option value="" disabled selected="selected">Choose your major</option>
                     <option
                         v-for="(                        major, index                        ) in                         majors                       "
-                        :key=" index " :value=" major.slug ">
+                        :key=" index " :value="major.slug">
                         {{ major.name }}
                     </option>
                 </select>
-                <button class="bg-primary hover:bg-primary/80 outline-0 shadow-md py-3 px-8 text-white rounded">Get
+                <select
+                    v-model="form.level"
+                    class="border border-primary outline-0 px-6 lg:px-10 py-3 lg:py-4 text-[#475569] bg-[#C4C4C4]/5 text-left"
+                    required
+                    >
+                    <option value="" disabled selected="selected">Level</option>
+                    <option
+                        v-for="(                        level, index                        ) in                         levels                       "
+                        :key=" index " 
+                        :value="level">
+                        {{ level }}
+                    </option>
+                </select>
+                <button type="submit" class="bg-primary hover:bg-primary/80 outline-0 shadow-md py-3 px-8 text-white rounded">Get
                     Started</button>
             </form>
         </div>
     </section>
 </template>
 <script>
-
-import { availableMajors } from '@/constants/'
+import { availableMajors, experienceLevels } from '@/contents/'
 
 export default {
     data () {
         return {
-            majors: availableMajors
+            majors: availableMajors,
+            levels: experienceLevels,
+            form:{
+                niche:"",
+                level: ""
+            }
+        }
+    },
+    methods:{
+        handleFormSubmit(e){
+            e.preventDefault();
+            // convert niche and level to lowercase and replace spaces with hyphens
+            const niche = this.form.niche.toLowerCase().replace(/\s/g, '-');
+            const level = this.form.level.toLowerCase().replace(/\s/g, '-');
+            
+            // change route to project page with the selected major and level
+            this.$router.push(`/${niche}/${level}`);
         }
     }
 }
