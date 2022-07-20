@@ -13,8 +13,7 @@
                         Level: <span class="font-semibold capitalize">{{ currentLevel }}</span>
                     </div>
                 </div>
-                <Button mode="secondary" class="rounded px-10 py-2 md:py-2">Change
-                    preference</Button>
+                <RecommendationPreference :current-major="currentMajor" :current-level="currentLevel" />
             </div>
             <ProjectsList :niche="currentMajor.slug" :level="currentLevel" />
         </Container>

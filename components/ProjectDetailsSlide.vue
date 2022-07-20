@@ -30,7 +30,7 @@
                     </span>
                 </li>
 
-                <li v-if="project.resources" class="px-4 py-4 border border-dotted border-b-primary">
+                <li class="px-4 py-4 border border-dotted border-b-primary">
                     <span class="font-semibold">Relevant Resources</span>
 
                     <div v-for="(                                                                                          resource, index                                                                                          ) in                                                                                           project.resources                                                                                          "
