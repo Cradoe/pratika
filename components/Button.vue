@@ -40,7 +40,7 @@ export default {
                 case "secondary":
                     return "bg-secondary hover:bg-secondary/80 focus:ring-secondary/80"
                 case "twitter":
-                    return "bg-[#1DA1F2] hover:bg-[#1DA1F2]/80 focus:ring-[#1DA1F2]/80"
+                    return "bg-[#1DA1F2] dark:bg-[#1DA1F2]/70 hover:bg-[#1DA1F2]/80 dark:hover:bg-[#1DA1F2]/50 focus:ring-[#1DA1F2]/80"
 
                 default:
                     return "bg-primary hover:bg-primary/80 focus:ring-primary/80";

@@ -5,7 +5,7 @@
         </PageHeroSection>
         <Container>
             <div class="flex flex-col gap-y-3 md:flex-row justify-between text-sm mt-5 mb-16">
-                <div class="flex justify-between md:justify-start md:gap-12 text-secondary">
+                <div class="flex justify-between md:justify-start md:gap-12 text-secondary dark:text-[#C4C4C4]">
                     <div>
                         Major: <span class="font-semibold capitalize"> {{ currentMajor.name }}</span>
                     </div>

@@ -1,5 +1,5 @@
 <template>
-    <section class="py-8 lg:py-16 text-dark-900">
+    <section class="py-8 lg:py-16 text-dark-900 dark:text-[#C4C4C4]">
         <div class="flex flex-col xl:flex-row gap-y-2 gap-x-20 relative">
             <div class="relative w-[65vw]">
                 <div
@@ -9,7 +9,7 @@
                     :alt=" project.title " />
             </div>
             <div class="w-[35vw]">
-                <h1 class="hidden xl:block font-black text-[#C4C4C4] text-8xl text-center italic">#{{ number }}</h1>
+                <h1 class="hidden xl:block font-black text-[#C4C4C4]  text-8xl text-center italic">#{{ number }}</h1>
                 <ul class="border border-dotted border-t-0 xl:border-t  border-primary  h-auto text-sm mt-5">
                     <li class="px-4 py-4 border-dotted border-t-0 xl:border-t border border-b-primary">
                         <span class="font-semibold">Project Name: </span> {{ project.title }}

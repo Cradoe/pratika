@@ -26,6 +26,7 @@ module.exports = {
         secondary: withOpacityValue( '--color-secondary' ),
         dark: {
           700: '#1E293B',
+          800: '#0D1626',
           900: '#111827',
         }
       },

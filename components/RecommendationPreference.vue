@@ -3,7 +3,7 @@
     
 <Button mode="secondary" class="rounded w-[80vw] mx-auto sm:w-auto px-10 py-2 md:py-2" @click="toggle()">{{ actionText }}</Button>
 
-    <div class="transition-all fixed transform duration-500  top-0 left-0 bg-white w-[100vw] h-[50vh] md:h-[20vh] flex flex-col md:flex-row justify-center items-center z-30"
+    <div class="transition-all fixed transform duration-500  top-0 left-0 bg-white dark:bg-dark-900 w-[100vw] h-[50vh] md:h-[20vh] flex flex-col md:flex-row justify-center items-center z-30 dark:border-b-[#C4C4C4] dark:border-b-2"
         :class=" show ? 'translate-y-0' : '-translate-y-[100vh]' ">
 
           <PreferenceForm :selected-level="currentLevel" :selected-niche="currentMajor.slug" />

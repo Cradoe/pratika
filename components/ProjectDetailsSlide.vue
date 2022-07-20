@@ -2,7 +2,7 @@
     <div class="transition-all fixed transform duration-500  top-0 left-0 bg-black/30 w-[100vw] h-[100vh] z-30 flex justify-center lg:justify-end"
         :class=" show ? 'translate-x-0' : '-translate-x-[100vw]' ">
 
-        <div class="bg-white h-full w-[90vw] lg:w-[50vw] overflow-y-auto">
+        <div class="bg-white dark:bg-dark-900 h-full w-[90vw] lg:w-[50vw] overflow-y-auto">
 
             <ul class="border  border-t-0 xl:border-t border-dotted border-primary w-10/12 mx-auto h-auto text-sm mt-5">
 
