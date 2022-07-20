@@ -1,16 +1,11 @@
 <template>
     <Fragment>
-        <li>
+        <!-- <li>
             <NuxtLink class="hover:text-seconday/75 dark:hover:text-primary/75" to="/#majors">
                 Available
                 Majors
             </NuxtLink>
-        </li>
-        <li>
-            <NuxtLink to="/faq" class="hover:text-seconday/75 dark:hover:text-primary/75">
-                FAQ
-            </NuxtLink>
-        </li>
+        </li> -->
     </Fragment>
 </template>
 <script>

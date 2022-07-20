@@ -6,12 +6,6 @@
                     <nuxt-img src="/logo-white.png" class="w-32" />
                 </NuxtLink>
                 <ul class="text-[1.008rem] text-[#E5E5E5] mt-4">
-                    <li class="hover:text-slate-500">
-                        <NuxtLink to="/about">About Us</NuxtLink>
-                    </li>
-                    <li class="hover:text-slate-500">
-                        <NuxtLink to="/about">Sponsor Project</NuxtLink>
-                    </li>
                     <li v-for="(          publicLink, index          ) in           projectInfo.PUBLIC_LINKS          "
                         :key=" index " class="hover:text-slate-500">
                         <a :href=" publicLink.url " target="_blank" rel="nofollow">{{ publicLink.name }}</a>

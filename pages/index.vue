@@ -3,8 +3,7 @@
     <HomeHeroSection />
     <HomeUserTweets />
     <HomeMajors />
-    <HomeEnrollSection />
-    <HomeTrackAchievements />
+    <HomeShareAchievements />
   </div>
 </template>
 
