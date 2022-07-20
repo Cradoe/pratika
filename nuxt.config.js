@@ -105,4 +105,6 @@ export default {
       },
     },
   },
+  // redirect to error page if error
+  generate: { fallback: true }
 }

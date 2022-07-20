@@ -64,7 +64,7 @@ export default {
             const level = this.form.level.toLowerCase().replace(/\s/g, '-');
             
             // change route to project page with the selected major and level
-            this.$router.push(`/${niche}/${level}`);
+            this.$router.push(`/projects/${niche}/${level}`);
         }
     }
 }
