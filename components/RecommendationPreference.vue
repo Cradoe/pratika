@@ -30,13 +30,13 @@ export default {
     data(){
         return {
             show: false,
-            actionText: 'Change preference',
+            actionText: 'Change filter',
         }
     },
      methods: {
         toggle() {
             this.show = !this.show;
-            this.actionText = this.show ? 'Cancel' : 'Change preference';
+            this.actionText = this.show ? 'Cancel' : 'Change filter';
         },
     }
 }

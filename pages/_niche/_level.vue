@@ -23,24 +23,30 @@
 
 <script>
 import Vue from 'vue';
-import { projectInfo, availableMajors} from '@/contents/';
+import { projectInfo, availableMajors,experienceLevels} from '@/contents/';
 
 export default Vue.extend( {
     name: "RecommendedProjectsPage",
-    asyncData({ params }) {
-        const { niche, level = "Easy"} = params;
+    asyncData({ redirect,params }) {
+        const { niche, level} = params;
 
         // find major that matches the paramter 
         const matchedMajor = availableMajors.find(major => major.slug === niche);
+        const matchedLevel = experienceLevels.find(l =>l.toLowerCase() === level.toLowerCase());
+
+        // redirect to 404 page if no match found
+        if (!matchedMajor || !matchedLevel) {
+            redirect('/404');
+        }
+
         return {
-            currentMajor: matchedMajor || { name: "All", slug: "all" },
-            currentLevel: level,
-            projects: []
+            currentMajor: matchedMajor,
+            currentLevel: matchedLevel.toLowerCase()
         };
-    },    
+    },   
     head () {
         return {
-            title: `${ this.currentMajor?.name || "All"} Projects | ${projectInfo.PROJECT_NAME}`
+            title: `${ this.currentMajor?.name} Projects | ${projectInfo.PROJECT_NAME}`
         };
     }
 } )
