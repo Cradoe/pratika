@@ -19,7 +19,7 @@
                 Lorem
                 Ipsum has been the
                 industry's standard dummy text ever sincez</p>
-            <PreferenceForm />
+            <PreferenceForm cta-button="Get Started" />
         </div>
     </section>
 </template>
