@@ -34,7 +34,7 @@
     "vue-fragment": "^1.5.2",
     "vue-server-renderer": "^2.6.14",
     "vue-template-compiler": "^2.6.14",
-    "vue-tweet": "^1.2.1",
+    "vue-tweet": "^2.0.2",
     "vue-tweet-embed": "^2.4.0",
     "vuejs-twitter-feed": "^1.0.1",
     "vuelidate": "^0.7.7",
