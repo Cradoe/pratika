@@ -31,10 +31,11 @@
                 </ul>
             </nav>
 
-            <div class="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800">
+            <div class="flex items-center ml-6 pl-6 dark:border-slate-800">
                 <label class="sr-only">Theme</label>
                 <AppDarkModeToggle />
                 <a :href="gitHubRepoUrl"
+                    target="_blank" rel="nofollow"
                     class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"><span
                         class="sr-only">Next Project on GitHub</span>
 
@@ -63,7 +64,7 @@ export default {
     },
     data: () => {
         return {
-            gitHubRepoUrl: projectInfo?.GitHub_REPO,
+            gitHubRepoUrl: projectInfo?.PUBLIC_LINKS?.gitHub?.url,
         }
     },
     computed: {

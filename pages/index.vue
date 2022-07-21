@@ -16,7 +16,7 @@ export default Vue.extend({
   layout: "landingPage",
   head() {
     return {
-      title: `${projectInfo.PROJECT_NAME} - The first open source platform to accelate your skills`
+      title: `${projectInfo.PROJECT_NAME} - ${projectInfo.TAG_LINE}`
     };
   },
 })

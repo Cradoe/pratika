@@ -5,9 +5,9 @@
 
             <div class="flex justify-center items-start flex-col gap-y-4 gap-x-10 lg:w-5/12 lg:order-2">
                 <p class="text-[#F8FAFC] lg:text-2xl">
-                    Professionals across the globe won't be talking about us if we aren't the the best lorem ipsum
+                    Pinned tweets from people all around the world
                 </p>
-                <NuxtLink to="/about" class="text-sm lg:text-base text-primary hover:text-primary/80">
+                <a :href="ctaLink" target="_blank" rel="nofollow" class="text-sm lg:text-base text-primary hover:text-primary/80">
                     <svg width="128" height="23" class="inline mr-3 w-12 lg:w-auto" viewBox="0 0 128 23" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -23,7 +23,7 @@
                     </svg>
 
                     Learn More
-                </NuxtLink>
+                </a>
             </div>
 
             <div class="lg:w-7/12 items-start grid md:grid-cols-2 md:gap-4 xl:gap-10">
@@ -46,6 +46,7 @@
 
 <script>
 import { Tweet } from 'vue-tweet-embed';
+import { projectInfo} from '@/contents/'
 export default {
     components: {
         Tweet
@@ -53,7 +54,8 @@ export default {
     data () {
         return {
             // divided four tweets into two subsections for proper UI alignment  
-            testimonialTweetsId: [ [ '1513253057949278215', '1509405942697406469' ], [ '1512914241619214343', '1509405942697406469' ] ]
+            testimonialTweetsId: [ [ '1513253057949278215', '1509405942697406469' ], [ '1512914241619214343', '1509405942697406469' ] ],
+            ctaLink:  projectInfo?.PUBLIC_LINKS?.twitter?.url,
         }
     },
 }

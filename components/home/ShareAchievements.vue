@@ -1,7 +1,7 @@
 <template>
     <section class="dark:bg-dark-900 py-16 mb-4">
         <HomeNumberedSectionHeading number=" 2 " heading="Share your Achievements"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since" />
+            description="Accomplishment stories, a way to learn in public can provide that critical information, proving that you're credible and good at what you do." />
 
         <Container>
             <div
@@ -17,21 +17,24 @@
 </template>
 
 <script>
+
+import { projectInfo } from '@/contents/';
+
 export default {
     data () {
         return {
             features: [
                 {
-                    image: '/feature-image-01.png',
-                    caption: 'Accelerate your skills by recreating real and carefully chosen websites.'
+                    image: '/selection-icon.png',
+                    caption: 'Pick a project, and see how you can improve your skills.'
                 },
                 {
-                    image: '/feature-image-01.png',
-                    caption: 'Accelerate your skills by recreating real and carefully chosen websites.'
+                    image: '/twitter.png',
+                    caption: 'Come back to click the Tweet button and share your accomplishments with the whole world.'
                 },
                 {
-                    image: '/feature-image-01.png',
-                    caption: 'Accelerate your skills by recreating real and carefully chosen websites.'
+                    image: '/happy-face.png',
+                    caption: `Tag our Twitter handle (@${projectInfo?.PUBLIC_LINKS?.twitter?.handle}) and we'll be happy to retweet your achievement story.`
                 }
             ]
         }
