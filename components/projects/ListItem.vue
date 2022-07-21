@@ -1,16 +1,16 @@
 <template>
     <section class="py-8 lg:py-16 text-dark-900 dark:text-[#C4C4C4]">
         <div class="flex flex-col xl:flex-row gap-y-2 gap-x-20 relative">
-            <div class="relative w-[65vw]">
+            <div class="relative xl:w-[65vw]">
                 <div
-                    class="absolute left-0 z-10 top-0 h-full w-11/12 rounded-3xl border border-dotted border-primary border-r-0 lg:border-r">
+                    class="hidden md:block absolute left-0 z-10 top-0 h-full w-11/12 rounded-3xl border border-dotted border-primary border-r-0 lg:border-r">
                 </div>
-                <nuxt-img class="w-full rounded-3xl" :src=" project.image " provider="NextProject"
+                <nuxt-img class="w-full rounded-sm md:rounded-3xl" :src=" project.image " provider="NextProject"
                     :alt=" project.title " />
             </div>
-            <div class="w-[35vw]">
+            <div class="xl:w-[35vw]">
                 <h1 class="hidden xl:block font-black text-[#C4C4C4]  text-8xl text-center italic">#{{ number }}</h1>
-                <ul class="border border-dotted border-t-0 xl:border-t  border-primary  h-auto text-sm mt-5">
+                <ul class="border border-dotted border-t-0 xl:border-t  border-primary  h-auto text-sm xl:mt-5">
                     <li class="px-4 py-4 border-dotted border-t-0 xl:border-t border border-b-primary">
                         <span class="font-semibold">Project Name: </span> {{ project.title }}
                     </li>

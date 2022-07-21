@@ -1,6 +1,6 @@
 <template>
     <div class="bg-secondary dark:bg-dark-700 pt-16">
-        <div class="grid md:grid-cols-3 gap-y-10 px-4 lg:px-16  4xl:px-56  pb-32">
+        <div class="grid md:grid-cols-3 gap-y-10 px-10 lg:px-16  4xl:px-56  pb-32">
             <div>
                 <NuxtLink to="/">
                     <nuxt-img src="/logo-white.png" class="w-32" />
