@@ -38,7 +38,7 @@
             <p class="text-center text-[#C4C4C4] text-sm">
                 &copy; {{ new Date().getFullYear() }} {{ projectInfo.PROJECT_NAME }} <br />
                 with
-                <fa :icon=" [ 'fas', 'heart' ] " class="text-red-500" /> from Ismail Obadimu and Contributors
+                <fa :icon=" [ 'fas', 'heart' ] " class="text-red-500" /> from <a href="http://ismailobadimu.com" target="_blank" rel="noopener noreferrer">Ismail Obadimu</a> and Contributors
             </p>
         </div>
     </div>

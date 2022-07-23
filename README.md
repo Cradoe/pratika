@@ -1,5 +1,8 @@
-# nextproject
+# **Curated list of porjects to improve your skills.**
 
+>All projects are categoized based on niches (front-end development, backend, ui/ux, et.c) and structured based on level of expertise.
+
+*For contribution, see [contributors Guide](./contributing.md)*
 ## Build Setup
 
 ```bash
@@ -23,15 +26,14 @@ For detailed explanation on how things work, check out the [documentation](https
 
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
 
-### `assets`
+### `assets/css`
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+The assets/css directory contains the tailwind.css base css styles.
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
 
 ### `components`
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+The components directory contains components. Components make up the different parts of the page and can be reused and imported into pages, layouts and even other components.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
 
