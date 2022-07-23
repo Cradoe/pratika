@@ -16,7 +16,6 @@ export interface IProject {
     image?: String,
     description?: String;
     features?: IProjectFeature[];
-    additionalInfo?: IProjectFeature[];
     resources?: IProjectResource[]
 }
 

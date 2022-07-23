@@ -1,6 +1,6 @@
 <template>
     <div class="bg-secondary dark:bg-dark-700 pt-16">
-        <div class="grid md:grid-cols-3 gap-y-10 px-10 lg:px-16  4xl:px-56  pb-32">
+        <div class="grid md:grid-cols-3 gap-y-10 px-10 lg:px-16  4xl:px-56  pb-4">
             <div>
                 <NuxtLink to="/">
                     <nuxt-img src="/logo-white.png" class="w-32" />
@@ -38,7 +38,7 @@
             <p class="text-center text-[#C4C4C4] text-sm">
                 &copy; {{ new Date().getFullYear() }} {{ projectInfo.PROJECT_NAME }} <br />
                 with
-                <fa :icon=" [ 'fas', 'heart' ] " class="text-red-500" /> from Ismail Obadimu and Contributors
+                <fa :icon=" [ 'fas', 'heart' ] " class="text-red-500" /> from <a href="http://ismailobadimu.com" target="_blank" rel="noopener noreferrer">Ismail Obadimu</a> and Contributors
             </p>
         </div>
     </div>
