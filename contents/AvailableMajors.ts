@@ -12,9 +12,5 @@ export const availableMajors: Major[] = [
     {
         name: "Backend Developement",
         slug: "backend"
-    },
-    {
-        name: "UI/UX",
-        slug: "ui-ux"
     }
 ]

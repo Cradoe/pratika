@@ -1,5 +1,6 @@
 import { IProject } from "~/utils";
 
+// see uitls/global.d.ts for IProject structure definition
 export const frontendIntermediateProjects: IProject[] = [
     {
         title: "Remote Job Hero Header 2 - Web Design",
@@ -16,20 +17,6 @@ export const frontendIntermediateProjects: IProject[] = [
                     "React JS",
                     "Tailwind CSS",
                     "Jest"]
-            }
-        ],
-        additionalInfo: [
-            {
-                title: "Enrollments",
-                value: '8900'
-            },
-            {
-                title: "Average Performance",
-                value: "89%"
-            },
-            {
-                title: "Project Estimated Duration",
-                value: "2days 3hours"
             }
         ],
         resources: [{

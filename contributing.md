@@ -89,6 +89,7 @@ Please ensure your Pull Request adheres to the following guidelines:
     }
     ```
   - Go back to contents/projects/index.ts and add your newly added property appropriatly.
+  - Finally, go to `./contents/AvailableMajors.ts` and edit appropriatly
 - Make sure the project is helpful before submitting. 
 - Please check your spelling and grammar.
 - Make sure your text editor is set to remove trailing whitespace.
