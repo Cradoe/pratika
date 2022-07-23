@@ -94,6 +94,7 @@ Please ensure your Pull Request adheres to the following guidelines:
 - Please check your spelling and grammar.
 - Make sure your text editor is set to remove trailing whitespace.
 - The pull request and commit should have a useful title.
+- Your commit message should adhere to [commitlink's guidline](https://github.com/conventional-changelog/commitlint/#what-is-commitlint)
 - The body of your commit message should contain a link to the repository.
 
 ## Code of Conduct

@@ -7,7 +7,7 @@ export const frontendIntermediateProjects: IProject[] = [
         image: "https://cdn.dribbble.com/users/2151039/screenshots/15422478/media/db41ab4b5ca5649fdee409900ea11118.jpg",
         features: [
             {
-                title: "Attibution",
+                title: "Attribution",
                 value: ["Ismail Obadimu", "Adewale Ayuba"]
             },
             {
