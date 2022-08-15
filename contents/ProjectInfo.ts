@@ -14,17 +14,17 @@ type ProjectInfo = {
     };
 }
 export const projectInfo: ProjectInfo = {
-    PROJECT_NAME: "Next Project",
+    PROJECT_NAME: "Bro Abeg 🥺",
     TAG_LINE: "The first open source platform to accelate your skills",
     PUBLIC_LINKS: {
         gitHub: {
             name: "GitHub",
-            url: "https://github.com/Cradoe/nextproject"
+            url: "https://github.com/Cradoe/broabeg"
         },
         twitter: {
             name: "Twitter",
-            handle: "my_next_project",
-            url: "https://twitter.com/my_next_project"
+            handle: "broabeg",
+            url: "https://twitter.com/broabeg"
         },
         discord: {
             name: "Discord",
