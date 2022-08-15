@@ -1,5 +1,5 @@
 {
-  "name": "nextproject",
+  "name": "broabeg",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -26,6 +26,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/fontawesome": "^1.1.2",
+    "@nuxtjs/google-analytics": "^2.4.0",
     "@vue/composition-api": "^1.4.9",
     "core-js": "^3.19.3",
     "nuxt": "^2.15.8",

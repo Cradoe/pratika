@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nextproject',
+    title: 'broabeg',
     htmlAttrs: {
       lang: 'en',
     },
@@ -54,7 +54,9 @@ export default {
     // For image optimization
     '@nuxt/image',
     '@nuxtjs/fontawesome',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // https://google-analytics.nuxtjs.org/setup
+    '@nuxtjs/google-analytics'
   ],
   colorMode: {
     classSuffix: '',
@@ -66,6 +68,8 @@ export default {
     '@nuxtjs/axios',
     // https://image.nuxtjs.org/getting-started/installation/
     // '@nuxt/image',
+    // https://google-analytics.nuxtjs.org/setup
+    '@nuxtjs/google-analytics'
   ],
 
   // Nuxt image optimization
@@ -106,5 +110,10 @@ export default {
     },
   },
   // redirect to error page if error
-  generate: { fallback: true }
+  generate: { fallback: true },
+
+  // https://google-analytics.nuxtjs.org/setup
+  googleAnalytics: {
+    id: 'G-DJ4D87N5SP'
+  }
 }
