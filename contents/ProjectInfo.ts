@@ -23,8 +23,8 @@ export const projectInfo: ProjectInfo = {
         },
         twitter: {
             name: "Twitter",
-            handle: "pratika",
-            url: "https://twitter.com/pratika"
+            handle: "pratikaDev",
+            url: "https://twitter.com/pratikaDev"
         },
         discord: {
             name: "Discord",
