@@ -1,1 +1,1 @@
-export * from "./global.d"
+export * from "./global"
