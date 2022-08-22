@@ -60,7 +60,7 @@ export default {
     async fetch () {
         try {
             this.contributors = await fetch(
-                'https://api.github.com/repos/cradoe/broabeg/contributors'
+                'https://api.github.com/repos/cradoe/pratika/contributors'
             ).then( res => res.json() );
         } catch ( error ) {
 
