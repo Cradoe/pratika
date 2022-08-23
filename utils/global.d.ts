@@ -9,12 +9,17 @@ export interface IProjectResource {
     title: String,
     link: String
 }
+export interface ICredit {
+    title: String,
+    url: String
+}
 
 export interface IProject {
     id?: String | Number;
     title?: String;
     image?: String,
     description?: String;
+    credits?: ICredit[];
     features?: IProjectFeature[];
     resources?: IProjectResource[]
 }
