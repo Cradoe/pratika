@@ -14,6 +14,15 @@
                     <li class="px-4 py-4 border-dotted border-t-0 xl:border-t border border-b-primary">
                         <span class="font-semibold">Project Name: </span> {{ project.title }}
                     </li>
+
+                    <li v-if="project.credits"  class="px-4 py-4 border border-dotted border-b-primary">
+                        <span class="font-semibold">Credits:</span>
+                        <span v-if=" Array.isArray( project.credits ) ">
+                            <a v-for="(                                                                credit, index                                                                ) in                                                                 project.credits                                                                "
+                        :key=" index " :href="credit.url" target="_blank" rel="noopener noreferrer">{{ credit.title }}</a>
+                        </span>
+                    </li>
+
                     <li v-for="(                                                                feature, index                                                                ) in                                                                 project.features                                                                "
                         :key=" index " class="px-4 py-4 border border-dotted border-b-primary">
                         <span class="font-semibold">{{ feature.title }}:</span>
